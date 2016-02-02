@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{fullpage}
+
+\title{Optical and Control of Spin and Electrical Currents}
+\author{Reinaldo Arturo Zapata Pe\~na}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Matrix elements}
+
+\
+
+
+From PRB \textbf{68}, 165348 (2003): All-optical control of spin and electrical
+currents in quantum wells
+\\
+
+At least double degeneracy for each $\mathbf{k}_{t}$.
+\begin{align*}
+\psi_{ns\mathbf{k}_{t}}(\mathbf{r})  && \leftarrow \text{spinor wave function}\\
+n && \leftarrow  \text{subband index} \\
+s && \leftarrow  \text{degeneracy index} \\
+V && \leftarrow  \text{Valence band} \\
+C && \leftarrow  \text{Conduction band} \\
+v_{n,s;m,p}^{a}(\mathbf{k}_{t}) &= \langle ns\mathbf{k}_{t} | v^{a} |
+mp\mathbf{k}_{t} \rangle & \leftarrow \text{velocity matrix elements}\\
+S_{n,s;m,p}^{a}(\mathbf{k}_{t}) &= \langle ns\mathbf{k}_{t} | S^{a} |
+mp\mathbf{k}_{t} \rangle & \leftarrow \text{spin matrix elements}\\
+K_{n,s;m,p}^{ab}(\mathbf{k}_{t})&= \langle ns\mathbf{k}_{t} | v^{a}S^{b} |
+mp\mathbf{k}_{t} \rangle & \leftarrow \text{spin-velocity matrix elements}\\
+\end{align*}
+
+
+
+% From PRB \textbf{76}, 205113 (2007): Full band structure LDA and $\mathbf{k}
+% \cdot \mathbf{p}$ calculations of optical spin-injection
+% \begin{align*}
+% \langle c\mathbf{k} | \hat{S}^{a} | m\mathbf{k}'\rangle &=
+% S^{a}_{cm}(\mathbf{k}) \delta(\mathbf{k}-\mathbf{k'})   & \leftarrow
+% \text{spin matrix elements} \\
+% \langle c\mathbf{k} | \hat{v}^{a} | v\mathbf{k}'\rangle &=
+% v^{a}_{cv}(\mathbf{k}) \delta(\mathbf{k}-\mathbf{k'})   & \leftarrow
+% \text{velocity matrix elements}
+% \end{align*}
+
+% From PRB \textbf{90}, 035212 (2014): Effect of material properties on the
+% accuracy of antiresonant approximation: Linear and second-order optical
+% responses (Nicolas Tancogne, BMS)
+% \begin{align*}
+% v_{nm}^{a} (\mathbf{k}) &= \langle n \mathbf{k} | \hat{v}^{a} | m\mathbf{k} \rangle
+% \end{align*}
+
+% From PRB \textbf{85}, 165324 (2012): Optical spin injection at semiconductor
+% surfaces (Cabellos, BMS)
+% \begin{align*}
+% \mathcal{S}^{a}_{mn} (l;\mathbf{k}) &= \frac{\hbar}{2\Omega} \displaystyle\int
+% _{\Omega} d^{3} r \psi_{m\mathbf{k}}^{\dag}
+% \end{align*}
+
+\section{C. Electrical and spin currents} % (fold)
+\label{sec:electrical_and_spin_currents}
+
+Areal electrical current density:
+\begin{align}\label{eq:areal_current}
+    \hat{J}^{a} = & \frac{1}{\mathcal{A}} \sum_{\mathbf{k}_{t}} \hat{J}^{a}(\mathbf{k}_{t}), \nonumber \\
+    & \hat{J}^{a}(\mathbf{k}_{t}) = e \sum_{C(C')}v^{a}_{CC'}(\mathbf{k}_{t})
+    a^{\dag}_{C'\mathbf{k}_{t}} a_{C\mathbf{k}_{t}}, \nonumber \\
+    \hat{J}^{a} = & \frac{e}{\mathcal{A}} \sum_{\mathbf{k}_{t}} \sum_{C(C')}v^{a}_{CC'}(\mathbf{k}_{t})
+    a^{\dag}_{C'\mathbf{k}_{t}} a_{C\mathbf{k}_{t}}.
+\end{align}
+
+Areal spin current density:
+\begin{align}\label{eq:areals_pin_current}
+    \hat{K}^{ab} = & \frac{1}{\mathcal{A}} \sum_{\mathbf{k}_{t}} \hat{K}^{ab}(\mathbf{k}_{t}), \nonumber \\
+    & \hat{K}^{ab}(\mathbf{k}_{t}) =   \sum_{C(C')}K^{ab}_{CC'}(\mathbf{k}_{t})
+    a^{\dag}_{C'\mathbf{k}_{t}} a_{C\mathbf{k}_{t}}, \nonumber \\
+    \hat{K}^{ab} = & \frac{1}{\mathcal{A}} \sum_{\mathbf{k}_{t}} \sum_{C(C')}K^{ab}_{CC'}(\mathbf{k}_{t})
+    a^{\dag}_{C'\mathbf{k}_{t}} a_{C\mathbf{k}_{t}}.
+\end{align}
+
+\newpage
+
+The rate of change of the expectation value of the single-particle operators,
+using the Fermi's golden rule in Eqns. \eqref{eq:areal_current} and \eqref{eq:areals_pin_current} , is given by:
+\begin{align*}
+    \frac{d\langle \hat{J}^{a}\rangle}{dt} = & \frac{d\langle \hat{J}^{a}\rangle_{1}}{dt} + 
+    \frac{d\langle \hat{J}^{a}\rangle_{2}}{dt} + \frac{d\langle \hat{J}^{a}\rangle_{I}}{dt}, \\
+    \frac{d\langle \hat{K}^{ab}\rangle}{dt} = & \frac{d\langle \hat{K}^{ab}\rangle_{1}}{dt} + 
+    \frac{d\langle \hat{K}^{ab}\rangle_{2}}{dt} + \frac{d\langle \hat{K}^{ab}\rangle_{I}}{dt},
+\end{align*}
+where the subscript 1, 2 and $I$ denote the time evolution of each operator due to one photon process at $2\omega$, two-photon process at $1\omega$, and interference between excitations at frequencies $1\omega$ and $2\omega$, respectively.
+
+
+Using the Fermi's golden rule in Eqs. \ref{eq:areal_current} and \ref{eq:areals_pin_current} we have that the one photon terms are given by
+\begin{align*}
+    \frac{d \langle \hat{J}^{a} \rangle_{1}}{dt} = & \eta_{1}^{acd}(2\omega) E^{c*}(2\omega) E^{d}(2\omega), \\
+    %
+    & \eta^{acd}(2\omega)_{1} = \frac{1}{A} \sum_{\mathbf{k}_{t}} \eta_{1}^{acd}(2\omega;\mathbf{k}_{t}), \\
+    %
+    & \qquad \eta_{1}^{acd}(2\omega;\mathbf{k}_{t}) = \frac{2\pi e^{3}}{\hbar^{2}} \sum_{C(C'),V}
+    \frac{v^{a}_{C'C}(\mathbf{k}_{t})v^{c*}_{C'V}(\mathbf{k}_{t})v^{d}_{CV}(\mathbf{k}_{t})}{(2\omega)^{2}}
+    \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})), \\
+    %
+    \frac{d \langle \hat{J}^{a} \rangle_{1}}{dt} = & \frac{1}{A}\frac{2\pi e^{3}}{\hbar^{2}} \sum_{\mathbf{k}_{t}} 
+    \sum_{C(C'),V} \frac{v^{a}_{C'C}(\mathbf{k}_{t})v^{c*}_{C'V}(\mathbf{k}_{t})v^{d}_{CV}(\mathbf{k}_{t})}{(2\omega)^{2}}
+    E^{c*}(2\omega) E^{d}(2\omega) \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})),
+\end{align*}
+and
+\begin{align*}
+    \frac{d \langle \hat{K}^{ab}\rangle_{1}}{dt} = & \mu^{abcd}_{1}(2\omega)E^{c*}(2\omega)E^{d}(2\omega)\\
+    %
+    & \mu^{abcd}_{1}(2\omega) = \frac{1}{A} \sum _{\mathbf{k}_{t}} \mu^{abcd}_{1}(2\omega;\mathbf{k}_{t}) \\
+    %
+    & \qquad \mu^{abcd}_{1}(2\omega;\mathbf{k}_{t}) = \frac{2\pi e^{2}}{\hbar^{2}} \sum_{C(C'),V} \frac{K^{ab}_{C'C}(\mathbf{k}_{t}) v ^{c*}_{C'V}(\mathbf{k}_{t}) v^{d}_{CV}(\mathbf{k}_{t})}{(2\omega)^{2}} \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})),
+\end{align*}
+the two-photon terms are given by 
+\begin{align*}
+    \frac{d \langle \hat{J}^{a} \rangle_{2}}{dt} = & \eta_{2}^{acdfg}(2\omega) E^{c*}(\omega) E^{*d}(\omega) E^{f}(\omega) E^{g}(\omega), \\
+    %
+    & \eta_{2}^{acdfg}(\omega) = \frac{1}{A} \sum_{\mathbf{k}_{t}} \eta^{acdfg}_{2}(\omega;\mathbf{k}_{t})\\
+    %
+    & \eta^{acdfg}_{2}(\omega;\mathbf{k}_{t}) = \frac{2\pi e^{5}}{\hbar^{4}} \sum_{C(C'),V,N,M} \frac{v^{a}_{CC'}(\mathbf{k}_{t}) v^{c*}_{C'M}(\mathbf{k}_{t}) v^{d*}_{MV}(\mathbf{k}_{t}) v^{f}_{CN}(\mathbf{k}_{t}) v^{g}_{NV}(\mathbf{k}_{t}) }{\omega^{4}[\omega_{CV}(\mathbf{k}_{t})/2 + \omega_{VN}(\mathbf{k}_{t})] [\omega_{C'V}(\mathbf{k}_{t})/2 + \omega_{VM}(\mathbf{k}_{t})] } \times\delta(2\omega-\omega_{CV}(\mathbf{k}_{t}))
+\end{align*}
+and
+\begin{align*}
+    \frac{d \langle \hat{K}^{ab} \rangle_{2}}{dt} = & \mu_{2}^{abcdfg}(2\omega) E^{*c}(\omega) E^{*d}(\omega) E^{f}(\omega) E^{g}(\omega), \\
+    %
+    & \mu_{2}^{abcdfg}(\omega) = \frac{1}{A} \sum_{\mathbf{k}_{t}} \mu^{abcdfg}(\omega;\mathbf{k}_{t})
+\end{align*}
+
+\end{document}
+
+
+
+
+
+
+
