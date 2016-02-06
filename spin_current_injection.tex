@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{fullpage}
+\usepackage[showframe]{geometry}
 
 \title{Optical and Control of Spin and Electrical Currents}
 \author{Reinaldo Arturo Zapata Pe\~na}
@@ -81,7 +82,7 @@ Areal spin current density:
     a^{\dag}_{C'\mathbf{k}_{t}} a_{C\mathbf{k}_{t}}.
 \end{align}
 
-\newpage
+% \newpage
 
 The rate of change of the expectation value of the single-particle operators,
 using the Fermi's golden rule in Eqns. \eqref{eq:areal_current} and \eqref{eq:areals_pin_current} , is given by:
@@ -114,21 +115,30 @@ and
     %
     & \mu^{abcd}_{1}(2\omega) = \frac{1}{A} \sum _{\mathbf{k}_{t}} \mu^{abcd}_{1}(2\omega;\mathbf{k}_{t}) \\
     %
-    & \qquad \mu^{abcd}_{1}(2\omega;\mathbf{k}_{t}) = \frac{2\pi e^{2}}{\hbar^{2}} \sum_{C(C'),V} \frac{K^{ab}_{C'C}(\mathbf{k}_{t}) v ^{c*}_{C'V}(\mathbf{k}_{t}) v^{d}_{CV}(\mathbf{k}_{t})}{(2\omega)^{2}} \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})),
+    & \qquad \mu^{abcd}_{1}(2\omega;\mathbf{k}_{t}) = \frac{2\pi e^{2}}{\hbar^{2}} \sum_{C(C'),V} \frac{K^{ab}_{C'C}(\mathbf{k}_{t}) v ^{c*}_{C'V}(\mathbf{k}_{t}) v^{d}_{CV}(\mathbf{k}_{t})}{(2\omega)^{2}} \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})), \\
+    %
+    \frac{d \langle \hat{K}^{ab}\rangle_{1}}{dt} = & \frac{1}{A} \frac{2\pi e^{2}}{\hbar^{2}} \sum _{\mathbf{k}_{t}}  \sum_{C(C'),V} \frac{K^{ab}_{C'C}(\mathbf{k}_{t}) v ^{c*}_{C'V}(\mathbf{k}_{t}) v^{d}_{CV}(\mathbf{k}_{t})}{(2\omega)^{2}} E^{c*}(2\omega)E^{d}(2\omega) \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})) .
 \end{align*}
-the two-photon terms are given by 
+
+The two-photon terms are given by 
 \begin{align*}
-    \frac{d \langle \hat{J}^{a} \rangle_{2}}{dt} = & \eta_{2}^{acdfg}(2\omega) E^{c*}(\omega) E^{*d}(\omega) E^{f}(\omega) E^{g}(\omega), \\
+    \frac{d \langle \hat{J}^{a} \rangle_{2}}{dt} = & \eta_{2}^{acdfg}(2\omega) E^{c*}(\omega) E^{*d}(\omega) E^{f}(\omega) E^{g}(\omega_ega),\\
     %
     & \eta_{2}^{acdfg}(\omega) = \frac{1}{A} \sum_{\mathbf{k}_{t}} \eta^{acdfg}_{2}(\omega;\mathbf{k}_{t})\\
     %
-    & \eta^{acdfg}_{2}(\omega;\mathbf{k}_{t}) = \frac{2\pi e^{5}}{\hbar^{4}} \sum_{C(C'),V,N,M} \frac{v^{a}_{CC'}(\mathbf{k}_{t}) v^{c*}_{C'M}(\mathbf{k}_{t}) v^{d*}_{MV}(\mathbf{k}_{t}) v^{f}_{CN}(\mathbf{k}_{t}) v^{g}_{NV}(\mathbf{k}_{t}) }{\omega^{4}[\omega_{CV}(\mathbf{k}_{t})/2 + \omega_{VN}(\mathbf{k}_{t})] [\omega_{C'V}(\mathbf{k}_{t})/2 + \omega_{VM}(\mathbf{k}_{t})] } \times\delta(2\omega-\omega_{CV}(\mathbf{k}_{t}))
+    & \qquad \eta^{acdfg}_{2}(\omega;\mathbf{k}_{t}) = \frac{2\pi e^{5}}{\hbar^{4}} \sum_{C(C'),V,N,M} \frac{v^{a}_{CC'}(\mathbf{k}_{t}) v^{c*}_{C'M}(\mathbf{k}_{t}) v^{d*}_{MV}(\mathbf{k}_{t}) v^{f}_{CN}(\mathbf{k}_{t}) v^{g}_{NV}(\mathbf{k}_{t}) }{\omega^{4}[\omega_{CV}(\mathbf{k}_{t})/2 + \omega_{VN}(\mathbf{k}_{t})] [\omega_{C'V}(\mathbf{k}_{t})/2 + \omega_{VM}(\mathbf{k}_{t})] } \\ & \qquad \qquad \qquad \qquad \times \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})), \\
+    %
+    \frac{d \langle \hat{J}^{a} \rangle_{2}}{dt} = & \frac{1}{A} \frac{2\pi e^{5}}{\hbar^{4}} \sum_{\mathbf{k}_{t}} \sum_{C(C'),V,N,M} \frac{v^{a}_{CC'}(\mathbf{k}_{t}) v^{c*}_{C'M}(\mathbf{k}_{t}) v^{d*}_{MV}(\mathbf{k}_{t}) v^{f}_{CN}(\mathbf{k}_{t}) v^{g}_{NV}(\mathbf{k}_{t}) }{\omega^{4}[\omega_{CV}(\mathbf{k}_{t})/2 + \omega_{VN}(\mathbf{k}_{t})] [\omega_{C'V}(\mathbf{k}_{t})/2 + \omega_{VM}(\mathbf{k}_{t})]} \\ & \times \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})), 
 \end{align*}
 and
 \begin{align*}
     \frac{d \langle \hat{K}^{ab} \rangle_{2}}{dt} = & \mu_{2}^{abcdfg}(2\omega) E^{*c}(\omega) E^{*d}(\omega) E^{f}(\omega) E^{g}(\omega), \\
     %
-    & \mu_{2}^{abcdfg}(\omega) = \frac{1}{A} \sum_{\mathbf{k}_{t}} \mu^{abcdfg}(\omega;\mathbf{k}_{t})
+    & \mu_{2}^{abcdfg}(\omega) = \frac{1}{A} \sum_{\mathbf{k}_{t}} \mu^{abcdfg}(\omega;\mathbf{k}_{t}) \\
+    %
+    & \quad  \mu^{abcdfg}(\omega;\mathbf{k}_{t}) = \frac{2\pi e^{4}}{\hbar^{4}} \sum_{C(C'),V,N,M,\mathbf{k}_{t}} \frac{K^{ab}_{CC'}(\mathbf{k}_{t}) v^{c*}_{C'M}(\mathbf{k}_{t}) v^{d*}_{MV}(\mathbf{k}_{t}) v^{f}_{CN}(\mathbf{k}_{t}) v^{g}_{NV}(\mathbf{k}_{t}) }{\omega^{4}[\omega_{CV}(\mathbf{k}_{t})/2 + \omega_{VN}(\mathbf{k}_{t})] [\omega_{C'V}(\mathbf{k}_{t})/2 + \omega_{VM}(\mathbf{k}_{t})] } \\ & \qquad \qquad \qquad \qquad \times \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})), \\
+    %
+    \frac{d \langle \hat{K}^{ab} \rangle_{2}}{dt} = &  \frac{1}{A} \frac{2\pi e^{4}}{\hbar^{4}} \sum_{\mathbf{k}_{t}} \sum_{C(C'),V,N,M,\mathbf{k}_{t}} \frac{K^{ab}_{CC'}(\mathbf{k}_{t}) v^{c*}_{C'M}(\mathbf{k}_{t}) v^{d*}_{MV}(\mathbf{k}_{t}) v^{f}_{CN}(\mathbf{k}_{t}) v^{g}_{NV}(\mathbf{k}_{t}) }{\omega^{4}[\omega_{CV}(\mathbf{k}_{t})/2 + \omega_{VN}(\mathbf{k}_{t})] [\omega_{C'V}(\mathbf{k}_{t})/2 + \omega_{VM}(\mathbf{k}_{t})] } \\ & \times \delta(2\omega-\omega_{CV}(\mathbf{k}_{t})),
 \end{align*}
 
 \end{document}
