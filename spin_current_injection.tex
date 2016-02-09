@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{fullpage}
-\usepackage[showframe]{geometry}
+\usepackage[]{geometry}
 
 \title{Optical and Control of Spin and Electrical Currents}
 \author{Reinaldo Arturo Zapata Pe\~na}
@@ -20,21 +20,23 @@ currents in quantum wells
 \\
 
 At least double degeneracy for each $\mathbf{k}_{t}$.
+\begin{align}
+\psi_{ns\mathbf{k}_{t}}(\mathbf{r})  & \leftarrow \text{spinor wave function} \label{eq:sp_wavefunc} \\
+n & \leftarrow  \text{subband index} \nonumber \\
+s & \leftarrow  \text{degeneracy index} \nonumber \\
+V & \leftarrow  \text{Valence band} \nonumber \\
+C & \leftarrow  \text{Conduction band} \nonumber
+\end{align}
 \begin{align*}
-\psi_{ns\mathbf{k}_{t}}(\mathbf{r})  && \leftarrow \text{spinor wave function}\\
-n && \leftarrow  \text{subband index} \\
-s && \leftarrow  \text{degeneracy index} \\
-V && \leftarrow  \text{Valence band} \\
-C && \leftarrow  \text{Conduction band} \\
-v_{n,s;m,p}^{a}(\mathbf{k}_{t}) &= \langle ns\mathbf{k}_{t} | v^{a} |
+v_{n,s;m,p}^{a}(\mathbf{k}_{t}) = \langle ns\mathbf{k}_{t} | v^{a} |
 mp\mathbf{k}_{t} \rangle & \leftarrow \text{velocity matrix elements}\\
-S_{n,s;m,p}^{a}(\mathbf{k}_{t}) &= \langle ns\mathbf{k}_{t} | S^{a} |
+S_{n,s;m,p}^{a}(\mathbf{k}_{t}) = \langle ns\mathbf{k}_{t} | S^{a} |
 mp\mathbf{k}_{t} \rangle & \leftarrow \text{spin matrix elements}\\
-K_{n,s;m,p}^{ab}(\mathbf{k}_{t})&= \langle ns\mathbf{k}_{t} | v^{a}S^{b} |
-mp\mathbf{k}_{t} \rangle & \leftarrow \text{spin-velocity matrix elements}\\
+K_{n,s;m,p}^{ab}(\mathbf{k}_{t})= \langle ns\mathbf{k}_{t} | v^{a}S^{b} |
+mp\mathbf{k}_{t} \rangle & \leftarrow \text{spin-velocity matrix elements}
 \end{align*}
 
-
+We have at least double degeneracy at each $\mathbf{K}_{t}$. In \eqref{eq:sp_wavefunc}, $n$ is a subband index and $s$ a degeneracy index.
 
 % From PRB \textbf{76}, 205113 (2007): Full band structure LDA and $\mathbf{k}
 % \cdot \mathbf{p}$ calculations of optical spin-injection
