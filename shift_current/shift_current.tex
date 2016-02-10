@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage[]{geometry}
+
+\title{Shift Current $\sigma$}
+\author{bms}
+\date{february 9th, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{equation*}
+\sigma^{abc}_2 = - \frac{i \pi e^{3}}{2 \hbar^{2}} \int \frac{d^{3}\mathbf{k}}{8\pi^{3}}
+\sum_{nm}f_{nm}(r^{b}_{mn} r^{c}_{nm;a} - r^{c}_{nm} r^{b}_{mn;a})
+\delta(\omega_{mn} - \omega)
+\end{equation*}
+
+\begin{equation*}
+m = c \qquad
+n = v \qquad
+f_{vc} = 1
+\end{equation*}
+
+\begin{equation*}
+\sigma^{abc}_2 = - \frac{i \pi e^{3}}{2 \hbar^{2}} \int \frac{d^{3}\mathbf{k}}{8\pi^{3}}
+\sum_{cv}(r^{b}_{cv} r^{c}_{vc;a} - r^{c}_{vc} r^{b}_{cv;a})
+\delta(\omega_{mn} - \omega)
+\end{equation*}
+
+\begin{align*}
+\sum_{\mathbf{k}}f(\mathbf{k}) &= \sum_{\mathbf{k}\geq 0}f(\mathbf{k}) + 
+\sum_{\mathbf{k}<0}f(\mathbf{k}) \\
+&= \sum_{\mathbf{k}>0} \left[f(\mathbf{k}) + f(\mathbf{-k}) \right]
+\end{align*}
+
+\begin{align*}      
+  r^{b}_{cv}(\mathbf{k}) r^{c}_{vc;a}(\mathbf{k}) + r^{b}_{cv}(-\mathbf{k}) 
+  r^{c}_{vc;a}(-\mathbf{k})
+- r^{c}_{vc}(\mathbf{k}) r^{b}_{cv;a}(\mathbf{k}) - r^{c}_{vc}(-\mathbf{k})
+  r^{b}_{cv;a}(-\mathbf{k}) =
+\end{align*}        
+
+\end{document}
+
+
+
+
+
+
+
