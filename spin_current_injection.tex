@@ -61,14 +61,86 @@ v_{n,\overline{s};m,\overline{p}}^{a*}(-\kt) =&
  -e^{i \lambda_{nm}} v_{n,s;m,p}^{a}(\kt)\\
 S_{c,\overline{s};c,\overline{p}}^{a*}(-\kt) =&
  -e^{i \lambda'_{nm}} S_{c,s;c,p}^{a}(\kt)\\
-K_{c,s;c,p}^{ab}(\kt)=& 
- e^{i \lambda''_{nm}} K_{c,\overline{s};c,\overline{p}}^{ab}(\kt)\\
+K_{c,s;c,p}^{ab*}(\kt)=& 
+ e^{i \lambda''_{nm}} K_{c,\overline{s};c,\overline{p}}^{ab}(-\kt)
 \end{align*}
 where $\overline{s}$ ($\overline{p}$) designates the opposite degeneracy index
 of $s$ ($p$) and $\lambda$, $\lambda'$, and $\lambda''$ are arbitrary phases.
 % section quantum_well_states (end)
 
+
+\section{Coherent control} % (fold)
+\label{sec:coherent_control}
+For some experimental configuration the injected spin currents have an
+accompanying electrical current. One can also generate \emph{pure} spin currents
+where a sorting of optically injected process gives rise to electrons
+propagating two opposite spatial directions with opposite average spins. The
+direction of the propagation of the injected currents can be controlled via the
+relative phase of the optical fields.
+
+\subsection*{A. Injection process}
+
+Unperturbed Hamiltonian IPA second quantization:
+
+\begin{equation*}\label{eq:unperturbed_hamiltonian}
+H_{0} = \sum_{C\kt} \hbar \omega_{C}(\kt) a^{\dag}_{C\kt} a^{}_{C\kt}  - 
+        \sum_{V\kt} \hbar \omega_{V}(\kt) b^{\dag}_{C\kt} b^{}_{C\kt}.
+\end{equation*}
+
+In a presence of an applied vector potential $\mathbf{A}(t)$ we have the
+interaction Hamiltonian as
+\begin{equation*}\label{interaction_hamiltonian}
+H_{int}(t) = - \frac{e}{c} \mathbf{A}(t) \cdot \mathcal{V}(t),
+\end{equation*}
+where
+\begin{align*}
+\mathcal{V}(t)  
+=& \sum_{CC'\kt} a^{\dag}_{C \kt} a       _{C'\kt} \mathbf{v}_{CC'}(\kt) e^{i\omega_{CC'}(\kt)t} \\
+-& \sum_{VV'\kt} b^{\dag}_{V'\kt} b       _{V \kt} \mathbf{v}_{VV'}(\kt) e^{i\omega_{VV'}(\kt)t} \\
++& \sum_{CV \kt} a^{\dag}_{C \kt} b^{\dag}_{V \kt} \mathbf{v}_{CV }(\kt) e^{i\omega_{CV }(\kt)t} \\
++& \sum_{CV \kt} b       _{V \kt} a       _{C \kt} \mathbf{v}_{VC }(\kt) e^{i\omega_{VC }(\kt)t},
+\end{align*}
+where $a^{\dag}_{C\kt} $ ($a_{C\kt}$) is the creation (annihilation) operator
+for an electron with conduction subbands and spin indices denoted by $c$ and
+$b^{\dag}_{V\kt} $ ($b_{V\kt}$) is the corresponding creation (annihilation)
+operator for a hole with valence subbands and spin indices denoted by $V$;
+$\hbar\omega_{CV}(\kt)$ is the energy of the conduction and valence subbands
+$C/V$ at $\kt$
+
+Vector potential of the field:
+\begin{align*}
+\mathbf{A}(t)   =&\mathbf{A}(  \omega)e^{-i(\omega+i\tau)t} 
+                + \mathbf{A}(- \omega)e^{ i(\omega-i\tau)t} \\
+                +&\mathbf{A}( 2\omega)e^{-i(\omega+i\tau)t} 
+                + \mathbf{A}(-2\omega)e^{ i(\omega-i\tau)t},
+\end{align*}
+where $\tau$ is a small positive number to turn on the system at $t=-\infty$ and
+is set to zero at the end of the calculation.
+
+Electric field and vector potential relation:
+\begin{equation*}
+\mathbf{E} = \frac{i\omega}{c}\mathbf{A}(\omega).  
+\end{equation*}
+
+The optical field causes transitions from the ground state of the system 
+
+% section coherent_control (end)
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
