@@ -4,9 +4,13 @@
 \usepackage[]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
-
+\usepackage{physics}
 
 \newcommand{\kt}{\mathbf{k}_{t}}
+\newcommand{\Op}{\hat{\mathcal{\theta}}}
+\newcommand{\n}{\hat{n}(\kt)}
+\newcommand{\sa}{\hat{S}^{a}(\kt)}
+\newcommand{\dw}{\delta(2\omega - \omega_{CV}(\kt))}
 
 
 %--------------------Link colors and pdf info-----------------------%
@@ -30,7 +34,8 @@ in quantum wells; Ali Najaime, R.D.R. Bath, J.E. Sipe.
 \section{Quantum well states} % (fold)
 \label{sec:quantum_well_states}
 
-\subsection*{C. Parameters and matrix elements}
+\subsection{Parameters and matrix elements}
+{\small (Section I-C in paper.) \\}
 
 Double degeneracy at each $\kt$. $\psi_{ns\kt}$ $\leftarrow$ spinor
 wavefunctions: $n \equiv$ subband index; $s\equiv$ degeneracy index. Also $n$
@@ -57,11 +62,11 @@ Superscripts denote Cartesian components.
 IPA, time recersal invariance leads to the following properties of the matrix
 elements:
 \begin{align*}
-v_{n,\overline{s};m,\overline{p}}^{a*}(-\kt) =&
+v_{n,\overline{s};m,\overline{p}}^{a*}(-\kt) &=
  -e^{i \lambda_{nm}} v_{n,s;m,p}^{a}(\kt)\\
-S_{c,\overline{s};c,\overline{p}}^{a*}(-\kt) =&
+S_{c,\overline{s};c,\overline{p}}^{a*}(-\kt) &=
  -e^{i \lambda'_{nm}} S_{c,s;c,p}^{a}(\kt)\\
-K_{c,s;c,p}^{ab*}(\kt)=& 
+K_{c,s;c,p}^{ab*}(\kt)&= 
  e^{i \lambda''_{nm}} K_{c,\overline{s};c,\overline{p}}^{ab}(-\kt)
 \end{align*}
 where $\overline{s}$ ($\overline{p}$) designates the opposite degeneracy index
@@ -78,13 +83,14 @@ propagating two opposite spatial directions with opposite average spins. The
 direction of the propagation of the injected currents can be controlled via the
 relative phase of the optical fields.
 
-\subsection*{A. Injection process}
+\subsection{A. Injection process}
+{\small (Section II-A in paper.) \\}
 
 Unperturbed Hamiltonian IPA second quantization:
 
 \begin{equation*}\label{eq:unperturbed_hamiltonian}
-H_{0} = \sum_{C\kt} \hbar \omega_{C}(\kt) a^{\dag}_{C\kt} a^{}_{C\kt}  - 
-        \sum_{V\kt} \hbar \omega_{V}(\kt) b^{\dag}_{C\kt} b^{}_{C\kt}.
+H_{0} = \sum_{C\kt} \hbar \omega_{C}(\kt) \hat{a}^{\dag}_{C\kt} \hat{a}^{}_{C\kt}  - 
+        \sum_{V\kt} \hbar \omega_{V}(\kt) \hat{b}^{\dag}_{C\kt} \hat{b}^{}_{C\kt}.
 \end{equation*}
 
 In a presence of an applied vector potential $\mathbf{A}(t)$ we have the
@@ -95,21 +101,25 @@ H_{int}(t) = - \frac{e}{c} \mathbf{A}(t) \cdot \mathcal{V}(t),
 where
 \begin{align*}
 \mathcal{V}(t)  
-=& \sum_{CC'\kt} a^{\dag}_{C \kt} a       _{C'\kt} \mathbf{v}_{CC'}(\kt) e^{i\omega_{CC'}(\kt)t} \\
--& \sum_{VV'\kt} b^{\dag}_{V'\kt} b       _{V \kt} \mathbf{v}_{VV'}(\kt) e^{i\omega_{VV'}(\kt)t} \\
-+& \sum_{CV \kt} a^{\dag}_{C \kt} b^{\dag}_{V \kt} \mathbf{v}_{CV }(\kt) e^{i\omega_{CV }(\kt)t} \\
-+& \sum_{CV \kt} b       _{V \kt} a       _{C \kt} \mathbf{v}_{VC }(\kt) e^{i\omega_{VC }(\kt)t},
+&= \sum_{CC'\kt} \hat{a}^{\dag}_{C \kt} \hat{a}       _{C'\kt} 
+\mathbf{v}_{CC'}(\kt) e^{i\omega_{CC'}(\kt)t} \\
+-& \sum_{VV'\kt} \hat{b}^{\dag}_{V'\kt} \hat{b}       _{V \kt} 
+\mathbf{v}_{VV'}(\kt) e^{i\omega_{VV'}(\kt)t} \\
++& \sum_{CV \kt} \hat{a}^{\dag}_{C \kt} \hat{b}^{\dag}_{V \kt} 
+\mathbf{v}_{CV }(\kt) e^{i\omega_{CV }(\kt)t} \\
++& \sum_{CV \kt} \hat{b}       _{V \kt} \hat{a}       _{C \kt} 
+\mathbf{v}_{VC }(\kt) e^{i\omega_{VC }(\kt)t},
 \end{align*}
-where $a^{\dag}_{C\kt} $ ($a_{C\kt}$) is the creation (annihilation) operator
-for an electron with conduction subbands and spin indices denoted by $c$ and
-$b^{\dag}_{V\kt} $ ($b_{V\kt}$) is the corresponding creation (annihilation)
-operator for a hole with valence subbands and spin indices denoted by $V$;
-$\hbar\omega_{CV}(\kt)$ is the energy of the conduction and valence subbands
-$C/V$ at $\kt$
+where $\hat{a}^{\dag}_{C\kt} $ ($\hat{a}_{C\kt}$) is the creation (annihilation)
+operator for an electron with conduction subbands and spin indices denoted by
+$c$ and $\hat{b}^{\dag}_{V\kt} $ ($\hat{b}_{V\kt}$) is the corresponding
+creation (annihilation) operator for a hole with valence subbands and spin
+indices denoted by $V$; $\hbar\omega_{CV}(\kt)$ is the energy of the conduction
+and valence subbands $C/V$ at $\kt$
 
 Vector potential of the field:
-\begin{align*}
-\mathbf{A}(t)   =&\mathbf{A}(  \omega)e^{-i(\omega+i\tau)t} 
+\begin{align*}\label{eq:vector_potential}
+\mathbf{A}(t)   &=\mathbf{A}(  \omega)e^{-i(\omega+i\tau)t} 
                 + \mathbf{A}(- \omega)e^{ i(\omega-i\tau)t} \\
                 +&\mathbf{A}( 2\omega)e^{-i(\omega+i\tau)t} 
                 + \mathbf{A}(-2\omega)e^{ i(\omega-i\tau)t},
@@ -118,16 +128,217 @@ where $\tau$ is a small positive number to turn on the system at $t=-\infty$ and
 is set to zero at the end of the calculation.
 
 Electric field and vector potential relation:
-\begin{equation*}
+\begin{equation*}\label{eq:electricF-vPotential_rel}
 \mathbf{E} = \frac{i\omega}{c}\mathbf{A}(\omega).  
 \end{equation*}
 
-The optical field causes transitions from the ground state of the system 
+The optical field causes transitions from the ground state of the system,
+$\ket{0}$, to the two particle (electron + hole) state:
+\begin{equation*}\label{eq:transition}
+\ket{CV\kt} = \hat{a}^{\dag}_{C\kt} \hat{a}_{V\kt} \ket{0}.
+\end{equation*}
+
+Perturbative approximation:
+\begin{equation*}\label{eq:perturbative_approx}
+\ket{\psi} = C_{0}(t) \ket{0} + \sum_{CV\kt} C_{CV\kt}(t)\ket{CV\kt}.
+\end{equation*}
+Solving for $C_{CV\kt}$ to second order in an electric field allows us to
+calculate the rate of change of the expectation value of any single-particle
+operator $\Op$ using the Fermi's golden rule (FGR, equation 6 of
+the paper):
+\begin{equation}\label{eq:FGR_1-2-I_contribution}
+\frac{d \expval*{\Op}    }{dt} =
+\frac{d \expval*{\Op}_{1}}{dt} +
+\frac{d \expval*{\Op}_{2}}{dt} +
+\frac{d \expval*{\Op}_{I}}{dt} ,
+\end{equation}
+where the subscripts 1, 2, and $I$ denotes one-photon contribution $2\omega$
+process, two-photon $\omega$ process, and interference between excitation at 
+$\omega$ and $2\omega$, respectively.
+
+Each of the three components of Eq. (\ref{eq:FGR_1-2-I_contribution}) will
+include contributions from the conductions subbands $d\expval*{\Op}^{e}/dt$ and valence 
+subbands $d\expval*{\Op}^{h}/dt$ (equation 7 of the paper):
+\begin{subequations}\label{eq:e-h_contribution_complete}
+\begin{equation}\label{eq:e-h_contribution}
+\frac{d\expval*{\Op}}{dt} =
+\frac{d\expval*{\Op}^{e}}{dt} + 
+\frac{d\expval*{\Op}^{h}}{dt} ,
+\end{equation}
+\begin{equation}\label{eq:e_contribution}
+\frac{d\expval*{\Op}^{e}}{dt} = 
+2\pi \sum_{C(C')V\kt} 
+\Omega^{*}_{C'V}(\kt) 
+\mel{C'\kt}{\Op}{C\kt}
+\Omega_{CV}(\kt)
+\delta\left( 2\omega-\omega_{CV}(\kt) \right),
+\end{equation}
+\begin{equation}\label{eq:h_contribution}
+\frac{d\expval*{\Op}^{h}}{dt} = 
+2\pi \sum_{V(V')C\kt} 
+\Omega_{CV}(\kt)
+\mel{V\kt}{\Op}{V'\kt}
+\Omega^{*}_{CV'}(\kt)
+\delta\left( 2\omega-\omega_{CV}(\kt) \right).
+\end{equation}
+\end{subequations}
+Here the convention is $C=cs$, $C'=cs'$, $V=vs$, $V'=vs'$; so, the states differ
+only in the spin index and then
+\begin{equation*}\label{eq:omega_c-cp}
+\omega_{CV}(\kt) = \omega_{C'V}(\kt).
+\end{equation*}
+
+The notation $C(C')$ indicates that the common subband index $c$ and the two
+spin indices, $s$ and $s'$ are to be summed over. 
+
+In Eq. (\ref{eq:e-h_contribution_complete}) we have that (equation 8 in
+paper):
+\begin{subequations}\label{eq:Omegas-complete}
+\begin{equation}\label{Omega_I-II}
+\Omega_{CV}{\kt} = \Omega^{I}_{CV}(\kt) + \Omega^{II}_{CV}(\kt),
+\end{equation}
+\begin{equation}\label{eq:Omega_I}
+\Omega^{I}_{CV}(\kt) = \frac{ie}{\hbar}
+\frac{\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)}{2\omega}
+\end{equation}
+\begin{equation}\label{eq:Omega_II}
+\Omega^{II}_{CV}(\kt) = - \frac{e}{\hbar\omega}
+\sum_{N} \frac{[\mathbf{v}_{CN}(\kt) \cdot \mathbf{E}(\omega)]
+[\mathbf{v}_{NV}(\kt)\cdot\mathbf{E}(\omega)]}{\omega_{CV}(\kt)+\omega_{VN}(kt)},
+\end{equation}
+\end{subequations}
+where $\Omega^{I}(\kt)$ and $\Omega^{II}(\kt)$ correspond to one- and two-photon
+transitions, respectively.
+
+The hole subband have higher effective mass than the conduction subbands and so
+the current is dominated by electrons. Then, substituting Eq.
+(\ref{eq:e_contribution}) into Eq. (\ref{eq:FGR_1-2-I_contribution}) we have
+that (equation 9 in paper)
+\begin{subequations}\label{eq:electron_12I_contribution-complete}
+\begin{equation}\label{eq:electron_12I_contribution}
+\frac{d\expval*{\Op}^{e}}{dt} = 
+\frac{d\expval*{\Op}^{e}_{1}}{dt} + 
+\frac{d\expval*{\Op}^{e}_{2}}{dt} + 
+\frac{d\expval*{\Op}^{e}_{I}}{dt} , 
+\end{equation}
+\begin{align}
+\frac{d\expval*{\Op}^{e}_{1}}{dt} &= 
+2\pi \sum_{C(C')V\kt}^n
+\mel*{C'\kt}{\Op}{C\kt}
+[\Omega^{I}_{CV}(\kt)
+\Omega^{I*}_{C'V}(\kt)]
+\delta \left( 2\omega - \omega_{CV}(\kt) \right) , 
+\label{eq:electron_1_contribution} \\
+\frac{d\expval*{\Op}^{e}_{2}}{dt} &= 
+2\pi \sum_{C(C')V\kt}^n
+\mel*{C'\kt}{\Op}{C\kt}
+[\Omega^{II}_{CV}(\kt)
+\Omega^{II*}_{C'V}(\kt)]
+\delta \left( 2\omega - \omega_{CV}(\kt) \right) , 
+\label{eq:electron_2_contribution}\\
+\frac{d\expval*{\Op}^{e}_{I}}{dt} &= 
+2\pi \sum_{C(C')V\kt}^n
+\mel*{C'\kt}{\Op}{C\kt}
+[\Omega^{I}_{CV}(\kt)
+\Omega^{II*}_{C'V}(\kt) + c.c.]
+\delta \left( 2\omega - \omega_{CV}(\kt) \right) 
+\label{eq:electron_I_contribution}.
+\end{align}
+\end{subequations}
+
+In previous equations the expression $\Op$ in can be substituted for the
+electrical and spin current operators. Although the contributions from the holes
+can be similarly found.
+
+\subsection{B. Carrier and spin population}
+In all the following expressions literal superscripts denote Cartesian
+components and if repeated are to be summed over.
+
+Areal carrier density operator: 
+\begin{align}\label{eq:areal_carrier_density}
+\hat{n} =& \frac{1}{\mathcal{A}} \sum_{\kt} \n , \nonumber \\ 
+         &\n = \sum_{C} \hat{a}^{\dag}_{C\kt} 
+           \hat{a}^{\dag}_{C\kt} , \nonumber \\ 
+\hat{n} =& \frac{1}{\mathcal{A}} \sum_{C\kt} 
+  \hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt} . 
+\end{align}
+
+Areal $a$ component of the spin density operator: 
+\begin{align}\label{eq:areal_spin_density}
+\hat{S}^{a} =& \frac{1}{\mathcal{A}} \sum_{\kt} \sa , \nonumber \\ 
+             &\sa = \sum_{CC'} S^{a}_{CC'} 
+               \hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt} , \nonumber \\ 
+\hat{S}^{a}=& \frac{1}{\mathcal{A}} \sum_{C\kt} 
+  \hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt} . 
+\end{align}
+
+Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
+(\ref{eq:FGR_1-2-I_contribution}) we can write
+\begin{subequations}\label{eq:FGR-n_and_Sa}
+\begin{equation*}
+\frac{d\ev*{\hat{n}}}{dt} =
+\frac{d\ev*{\hat{n}}_{1}}{dt} +
+\frac{d\ev*{\hat{n}}_{2}}{dt} +
+\frac{d\ev*{\hat{n}}_{I}}{dt} ,
+\end{equation*}
+\begin{equation*}
+\frac{d\ev*{\hat{S}^{a}}}{dt} =
+\frac{d\ev*{\hat{S}^{a}}_{1}}{dt} +
+\frac{d\ev*{\hat{S}^{a}}_{2}}{dt} +
+\frac{d\ev*{\hat{S}^{a}}_{I}}{dt} .
+\end{equation*}
+\end{subequations}
+
+
+Dropping the two-photons contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. (\ref
+{Omega_I-II}) we define $\Omega_{CV}{\kt} \equiv \Omega^{I}_{CV}(\kt)$. Then we
+can calculate the one-photon contribution to the carrier and spin population
+injection using Eqns. (\ref{eq:e_contribution}) and
+(\ref{eq:electron_1_contribution}) as follows:
+
+Working with the transitions expressions of Eq. (\ref{eq:electron_1_contribution})
+% \begin{subequations}
+\begin{align*}
+\Omega_{CV}{\kt} =& \frac{ie}{\hbar}
+\frac{\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)}{2\omega} , \\
+\Omega^{*}_{C'V}{\kt} =& \frac{-ie}{\hbar}
+\frac{\mathbf{v}^{*}_{C'V}(\kt) \cdot \mathbf{E}^{*}(2\omega)}{2\omega} .
+\end{align*}
+% \end{subequations}
+Using the mathematical relation 
+\begin{equation}\label{eq:dot_product}
+\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)
+= \sum_{\ell} v^{\ell}_{CV}(\kt) E^{\ell}(2\omega) =  v^{\ell}_{CV}(\kt)
+E^{\ell}(2\omega) 
+\end{equation}
+we have 
+\begin{equation}\label{omegaI_omegaI_product}
+[\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] =
+\left( \frac{e}{\hbar} \right)^{2} 
+\frac{v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}}.
+\end{equation}
+
+Now, using Eq. (\ref{eq:areal_carrier_density}) we have for the carrier
+injection 
+\begin{align}
+\mel*{C'\kt}{\Op}{C\kt} 
+&= \mel*{C'\kt}{\hat{n}}{C\kt} , \nonumber \\
+&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt}}{C\kt} , \nonumber \\
+&= \frac{1}{\mathcal{A}} \delta_{CC'} .
+\end{align}
+
+Then, from Eqns. (\ref{eq:areal_carrier_density}, \ref{eq:dot_product},
+\ref{omegaI_omegaI_product}) we can write 
+\begin{equation*}
+\frac{d\n}{dt} = \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
+\frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}}.
+\end{equation*}
+
+
 
 % section coherent_control (end)
 \end{document}
-
-
 
 
 
