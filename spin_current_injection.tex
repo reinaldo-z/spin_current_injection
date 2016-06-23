@@ -193,11 +193,11 @@ only in the spin index and then
 The notation $C(C')$ indicates that the common subband index $c$ and the two
 spin indices, $s$ and $s'$ are to be summed over. 
 
-In Eq. (\ref{eq:e-h_contribution_complete}) we have that (equation 8 in
-paper):
+The term $\Omega_{CV}({\kt})$ in Eq. (\ref{eq:e-h_contribution_complete}) is
+given by: that (equation 8 in paper):
 \begin{subequations}\label{eq:Omegas-complete}
 \begin{equation}\label{Omega_I-II}
-\Omega_{CV}{\kt} = \Omega^{I}_{CV}(\kt) + \Omega^{II}_{CV}(\kt),
+\Omega_{CV}({\kt}) = \Omega^{I}_{CV}(\kt) + \Omega^{II}_{CV}(\kt),
 \end{equation}
 \begin{equation}\label{eq:Omega_I}
 \Omega^{I}_{CV}(\kt) = \frac{ie}{\hbar}
@@ -298,6 +298,7 @@ can calculate the one-photon contribution to the carrier and spin population
 injection using Eqns. (\ref{eq:e_contribution}) and
 (\ref{eq:electron_1_contribution}) as follows:
 
+\subsubsection{Carrier injection derivation}
 Working with the transitions expressions of Eq. (\ref{eq:electron_1_contribution})
 % \begin{subequations}
 \begin{align*}
@@ -307,12 +308,6 @@ Working with the transitions expressions of Eq. (\ref{eq:electron_1_contribution
 \frac{\mathbf{v}^{*}_{C'V}(\kt) \cdot \mathbf{E}^{*}(2\omega)}{2\omega} .
 \end{align*}
 % \end{subequations}
-Using the mathematical relation 
-\begin{equation}\label{eq:dot_product}
-\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)
-= \sum_{\ell} v^{\ell}_{CV}(\kt) E^{\ell}(2\omega) =  v^{\ell}_{CV}(\kt)
-E^{\ell}(2\omega) 
-\end{equation}
 we have 
 \begin{equation}\label{omegaI_omegaI_product}
 [\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] =
@@ -320,8 +315,12 @@ we have
 \frac{v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}}.
 \end{equation}
 
-Now, using Eq. (\ref{eq:areal_carrier_density}) we have for the carrier
-injection 
+Also we have
+\begin{equation}\label{eq:dot_product}
+\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)
+= \sum_{\ell} v^{\ell}_{CV}(\kt) E^{\ell}(2\omega) \equiv v^{\ell}_{CV}(\kt)
+E^{\ell}(2\omega) 
+\end{equation}
 \begin{align}
 \mel*{C'\kt}{\Op}{C\kt} 
 &= \mel*{C'\kt}{\hat{n}}{C\kt} , \nonumber \\
@@ -330,8 +329,7 @@ injection
 &= \frac{1}{\mathcal{A}} \delta_{CC'} .
 \end{align}
 
-Then, from Eqns. (\ref{eq:areal_carrier_density}, \ref{eq:dot_product},
-\ref{omegaI_omegaI_product}) we can write 
+Then, from Eqns. (\ref{eq:dot_product},\ref{omegaI_omegaI_product}) we can write
 \begin{equation*}
 \frac{d\ev*{\n}}{dt} = \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
 \frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}}.
