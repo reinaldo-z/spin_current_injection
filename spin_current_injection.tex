@@ -298,6 +298,20 @@ can calculate the one-photon contribution to the carrier and spin population
 injection using Eqns. (\ref{eq:e_contribution}) and
 (\ref{eq:electron_1_contribution}) as follows:
 
+The one-photon contribution to the carrier (Eq. \ref{eq:carrier_population}) and
+the spin population (Eq. \ref{eq:spin_population}) injection can be written as
+\begin{align}\label{eq:carrier_population}
+\frac{d\ev*{\hat{n}}^{e}_{1}}{dt} = \,&
+\xi^{bc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) \nonumber \\
+& \xi^{bc}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{1}(2\omega;\kt)
+\end{align}
+\begin{align}\label{eq:spin_population}
+\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} = \,&
+\zeta^{abc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) \nonumber \\
+& \zeta^{bac}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{1}(2\omega;\kt)
+\end{align}
+
+
 \subsubsection{Carrier injection derivation}
 Working with the transitions expressions of Eq. (\ref{eq:electron_1_contribution})
 % \begin{subequations}
@@ -330,10 +344,20 @@ E^{\ell}(2\omega)
 \end{align}
 
 Then, from Eqns. (\ref{eq:dot_product},\ref{omegaI_omegaI_product}) we can write
-\begin{equation*}
-\frac{d\ev*{\n}}{dt} = \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
-\frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}}.
-\end{equation*}
+\begin{align*}
+\frac{d\ev*{\n}^{e}_{1}}{dt} &= 
+\frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
+\frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
+E^{c}(2\omega)}{(2\omega)^{2}}. \\
+&= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
+\frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
+E^{c}(2\omega)}{(2\omega)^{2}}. \\
+\end{align*}
+
+Now, from Eq. (\ref{eq:xi-second_rank_tensor}) we have that 
+\begin{equation}
+\xi^{bc}_{1}(2\omega;\kt) = 
+\end{equation}
 
 
 
