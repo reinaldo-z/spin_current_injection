@@ -298,22 +298,23 @@ can calculate the one-photon contribution to the carrier and spin population
 injection using Eqns. (\ref{eq:e_contribution}) and
 (\ref{eq:electron_1_contribution}) as follows:
 
-The one-photon contribution to the carrier (Eq. \ref{eq:carrier_population}) and
-the spin population (Eq. \ref{eq:spin_population}) injection can be written as
-\begin{align}\label{eq:carrier_population}
+The one-photon contribution to the carrier and the spin population injection can
+be written as
+\begin{align}\label{eq:carrier_spin_population}
 \frac{d\ev*{\hat{n}}^{e}_{1}}{dt} = \,&
-\xi^{bc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) \nonumber \\
-& \xi^{bc}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{1}(2\omega;\kt)
-\end{align}
-\begin{align}\label{eq:spin_population}
+\xi^{bc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) \\
 \frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} = \,&
-\zeta^{abc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) \nonumber \\
-& \zeta^{bac}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{1}(2\omega;\kt)
+\zeta^{abc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) 
+\end{align}
+where the second-rank tensor and the third-rank pseudotensor are given by
+\begin{align}\label{eq:carrier_spin_tensors}
+\xi^{bc}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{1}(2\omega;\kt) \\
+\zeta^{bac}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{1}(2\omega;\kt)
 \end{align}
 
 
 \subsubsection{Carrier injection derivation}
-Working with the transitions expressions of Eq. (\ref{eq:electron_1_contribution})
+Working with the transitions expressions (Eq. \ref{eq:electron_1_contribution})
 % \begin{subequations}
 \begin{align*}
 \Omega_{CV}{\kt} =& \frac{ie}{\hbar}
