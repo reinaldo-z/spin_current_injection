@@ -97,7 +97,7 @@ H_{0} = \sum_{C\kt} \hbar \omega_{C}(\kt) \hat{a}^{\dag}_{C\kt} \hat{a}^{}_{C\kt
 
 In a presence of an applied vector potential $\mathbf{A}(t)$ we have the
 interaction Hamiltonian as
-\begin{equation*}\label{interaction_hamiltonian}
+\begin{equation*}\label{eq:interaction_hamiltonian}
 H_{int}(t) = - \frac{e}{c} \mathbf{A}(t) \cdot \mathcal{V}(t),
 \end{equation*}
 where
@@ -158,9 +158,9 @@ where the subscripts 1, 2, and $I$ denotes one-photon contribution $2\omega$
 process, two-photon $\omega$ process, and interference between excitation at 
 $\omega$ and $2\omega$, respectively.
 
-Each of the three components of Eq. (\ref{eq:FGR_1-2-I_contribution}) will
-include contributions from the conductions subbands $d\expval*{\Op}^{e}/dt$ and valence 
-subbands $d\expval*{\Op}^{h}/dt$ (equation 7 of the paper):
+Each of the three components of Eq. \eqref{eq:FGR_1-2-I_contribution} will
+include contributions from the conductions subbands $d\expval*{\Op}^{e}/dt$ and
+valence subbands $d\expval*{\Op}^{h}/dt$ (equation 7 of the paper):
 \begin{subequations}\label{eq:e-h_contribution_complete}
 \begin{equation}\label{eq:e-h_contribution}
 \frac{d\expval*{\Op}}{dt} =
@@ -193,10 +193,10 @@ only in the spin index and then
 The notation $C(C')$ indicates that the common subband index $c$ and the two
 spin indices, $s$ and $s'$ are to be summed over. 
 
-The term $\Omega_{CV}({\kt})$ in Eq. (\ref{eq:e-h_contribution_complete}) is
+The term $\Omega_{CV}({\kt})$ in Eq. \eqref{eq:e-h_contribution_complete} is
 given by: that (equation 8 in paper):
 \begin{subequations}\label{eq:Omegas-complete}
-\begin{equation}\label{Omega_I-II}
+\begin{equation}\label{eq:Omega_I-II}
 \Omega_{CV}({\kt}) = \Omega^{I}_{CV}(\kt) + \Omega^{II}_{CV}(\kt),
 \end{equation}
 \begin{equation}\label{eq:Omega_I}
@@ -214,7 +214,7 @@ transitions, respectively.
 
 The hole subband have higher effective mass than the conduction subbands and so
 the current is dominated by electrons. Then, substituting Eq.
-(\ref{eq:e_contribution}) into Eq. (\ref{eq:FGR_1-2-I_contribution}) we have
+\eqref{eq:e_contribution} into Eq. \eqref{eq:FGR_1-2-I_contribution} we have
 that (equation 9 in paper)
 \begin{subequations}\label{eq:electron_12I_contribution-complete}
 \begin{equation}\label{eq:electron_12I_contribution}
@@ -230,7 +230,7 @@ that (equation 9 in paper)
 [\Omega^{I}_{CV}(\kt)
 \Omega^{I*}_{C'V}(\kt)]
 \delta \left( 2\omega - \omega_{CV}(\kt) \right) , 
-\label{eq:electron_1_contribution} \\
+\label{eq:1_electron_contribution} \\
 \frac{d\expval*{\Op}^{e}_{2}}{dt} &= 
 2\pi \sum_{C(C')V\kt}^n
 \mel*{C'\kt}{\Op}{C\kt}
@@ -275,7 +275,7 @@ Areal $a$ component of the spin density operator:
 \end{align}
 
 Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
-(\ref{eq:FGR_1-2-I_contribution}) we can write
+\eqref{eq:FGR_1-2-I_contribution} we can write
 \begin{subequations}\label{eq:FGR-n_and_Sa}
 \begin{equation*}
 \frac{d\ev*{\hat{n}}}{dt} =
@@ -292,72 +292,83 @@ Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
 \end{subequations}
 
 
-Dropping the two-photons contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. (\ref
-{Omega_I-II}) we define $\Omega_{CV}{\kt} \equiv \Omega^{I}_{CV}(\kt)$. Then we
-can calculate the one-photon contribution to the carrier and spin population
-injection using Eqns. (\ref{eq:e_contribution}) and
-(\ref{eq:electron_1_contribution}) as follows:
+199two-photons contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
+\eqref{eq:Omegas-complete} we define $\Omega_{CV}{\kt} \equiv
+\Omega^{I}_{CV}(\kt)$. Then we can calculate the one-photon contribution to the
+carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
+\eqref{eq:1_electron_contribution} as follows:
 
 The one-photon contribution to the carrier and the spin population injection can
 be written as
-\begin{align}\label{eq:carrier_spin_population}
-\frac{d\ev*{\hat{n}}^{e}_{1}}{dt} = \,&
-\xi^{bc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) \\
-\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} = \,&
+\begin{align}
+\frac{d\ev*{\hat{n}}^{e}_{1}}{dt} &=
+\xi^{bc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) 
+= \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{1}(2\omega;\kt) 
+E^{b*}(2\omega)E^{c}(2\omega)
+\label{eq:carrier_population} \\
+\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} &=
 \zeta^{abc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) 
+= \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{1}(2\omega;\kt)
+E^{b*}(2\omega)E^{c}(2\omega)
+\label{eq:spin_population}
 \end{align}
 where the second-rank tensor and the third-rank pseudotensor are given by
-\begin{align}\label{eq:carrier_spin_tensors}
-\xi^{bc}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{1}(2\omega;\kt) \\
-\zeta^{bac}_{1}(2\omega) = \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{1}(2\omega;\kt)
-\end{align}
 
 
-\subsubsection{Carrier injection derivation}
-Working with the transitions expressions (Eq. \ref{eq:electron_1_contribution})
-% \begin{subequations}
-\begin{align*}
-\Omega_{CV}{\kt} =& \frac{ie}{\hbar}
+\subsubsection{Carrier and spin injection derivation}
+Working with the expressions of Eq. \eqref{eq:1_electron_contribution}
+we have: 
+\begin{align*}\label{eq:omegaICV_omegaI*VpV}
+\Omega_{CV}{\kt} &= \frac{ie}{\hbar}
 \frac{\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)}{2\omega} , \\
-\Omega^{*}_{C'V}{\kt} =& \frac{-ie}{\hbar}
+\Omega^{*}_{C'V}{\kt} &= \frac{-ie}{\hbar}
 \frac{\mathbf{v}^{*}_{C'V}(\kt) \cdot \mathbf{E}^{*}(2\omega)}{2\omega} .
 \end{align*}
-% \end{subequations}
-we have 
-\begin{equation}\label{omegaI_omegaI_product}
-[\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] =
-\left( \frac{e}{\hbar} \right)^{2} 
-\frac{v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}}.
-\end{equation}
-
-Also we have
+Now using the relation
 \begin{equation}\label{eq:dot_product}
 \mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)
 = \sum_{\ell} v^{\ell}_{CV}(\kt) E^{\ell}(2\omega) \equiv v^{\ell}_{CV}(\kt)
-E^{\ell}(2\omega) 
+E^{\ell}(2\omega) ,
 \end{equation}
-\begin{align}
-\mel*{C'\kt}{\Op}{C\kt} 
-&= \mel*{C'\kt}{\hat{n}}{C\kt} , \nonumber \\
+we can write 
+\begin{equation}\label{eq:omegaICV_omegaI*VpV_product}
+[\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] =
+\left( \frac{e}{\hbar} \right)^{2} 
+\frac{v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}} .
+\end{equation}
+
+Working with the operators we have 
+\begin{align}\label{eq:op_n}
+\mel*{C'\kt}{\hat{n}}{C\kt} ,
 &= \frac{1}{\mathcal{A}} \sum_{C\kt} 
 \mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt}}{C\kt} , \nonumber \\
 &= \frac{1}{\mathcal{A}} \delta_{CC'} .
 \end{align}
+\begin{align}\label{eq:op_S}
+\mel*{C'\kt}{\hat{S}^{a}}{C\kt} ,
+&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} \mel*{C'\kt}{\hat{S}^{a}(\kt)}{C\kt} \nonumber \\
+&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} S^{a}_{C'C} \mel*{C'\kt}{(\kt)\hat{a}^{\dag}_{C\kt} 
+\hat{a}^{\dag}_{C\kt}}{C\kt} , \nonumber \\
+&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} S^{a}_{C'C} \delta_{CC'} = 
+\frac{1}{\mathcal{A}} \sum_{CC'\kt} S^{a}_{CC'} .
+\end{align}
 
-Then, from Eqns. (\ref{eq:dot_product},\ref{omegaI_omegaI_product}) we can write
+
+Then, using the three equations above into Eq.
+\eqref{eq:1_electron_contribution} we can write
 \begin{align*}
 \frac{d\ev*{\n}^{e}_{1}}{dt} &= 
 \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
 \frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}}. \\
+E^{c}(2\omega)}{(2\omega)^{2}} \dw , \\
 &= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
 \frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}}. \\
+E^{c}(2\omega)}{(2\omega)^{2}} \dw .
 \end{align*}
-
-Now, from Eq. (\ref{eq:xi-second_rank_tensor}) we have that 
-\begin{equation}
-\xi^{bc}_{1}(2\omega;\kt) = 
+and so, from Eq. \eqref{eq:carrier_population} we have that 
+\begin{equation}\label{eq:1_carrier_tensor}
+\xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
+\sum_{CV} \frac{v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw \nonumber
 \end{equation}
 
 
