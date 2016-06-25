@@ -35,7 +35,7 @@ in quantum wells; Ali Najaime, R.D.R. Bath, J.E. Sipe.
 \label{sec:quantum_well_states}
 
 \subsection{Parameters and matrix elements}
-{\small (Section I-C in paper.) \\}
+{\small Section I-C in paper. \\}
 
 Double degeneracy at each $\kt$. $\psi_{ns\kt}$ $\leftarrow$ spinor
 wavefunctions: $n \equiv$ subband index; $s\equiv$ degeneracy index. Also $n$
@@ -45,7 +45,7 @@ subbands. $A$ corresponds to the area in the $xy$ plane.
 
 At the end of the calculation $A \rightarrow \infty$ $\Rightarrow$
 \begin{equation*}
-\frac{1}{A} \sum_{\kt} \rightarrow \int \frac{d\kt}{(2 \pi)^{2}} 
+\frac{1}{A} \sum_{\kt} \rightarrow \int \frac{d\kt}{(2 \pi)^{2}} .
 \end{equation*}
 
 Definitions:
@@ -57,7 +57,7 @@ mp\kt \rangle & \leftarrow \text{spin matrix elements}\\
 K_{n,s;m,p}^{ab}(\kt)= \langle ns\kt | v^{a}S^{b} |
 mp\kt \rangle & \leftarrow \text{spin-velocity matrix elements}
 \end{align*}
-Superscripts denote Cartesian components.
+Superscripts denote Cartesian components and if repeated are to be summed over.
 
 IPA, time recersal invariance leads to the following properties of the matrix
 elements:
@@ -76,7 +76,7 @@ of $s$ ($p$) and $\lambda$, $\lambda'$, and $\lambda''$ are arbitrary phases.
 \newpage
 \section{Coherent control} % (fold)
 \label{sec:coherent_control}
-{\small Section II in paper}
+{\small Section II in paper \\}
 
 For some experimental configuration the injected spin currents have an
 accompanying electrical current. One can also generate \emph{pure} spin currents
@@ -252,7 +252,9 @@ In previous equations the expression $\Op$ in can be substituted for the
 electrical and spin current operators. Although the contributions from the holes
 can be similarly found.
 
-\subsection{B. Carrier and spin population}
+\subsection{Carrier and spin population}
+{\small Section II-B in paper \\}
+
 In all the following expressions literal superscripts denote Cartesian
 components and if repeated are to be summed over.
 
@@ -291,31 +293,29 @@ Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
 \end{equation*}
 \end{subequations}
 
-
-199two-photons contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
-\eqref{eq:Omegas-complete} we define $\Omega_{CV}{\kt} \equiv
-\Omega^{I}_{CV}(\kt)$. Then we can calculate the one-photon contribution to the
-carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
-\eqref{eq:1_electron_contribution} as follows:
-
 The one-photon contribution to the carrier and the spin population injection can
 be written as
 \begin{align}
 \frac{d\ev*{\hat{n}}^{e}_{1}}{dt} &=
 \xi^{bc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) 
 = \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{1}(2\omega;\kt) 
-E^{b*}(2\omega)E^{c}(2\omega)
+E^{b*}(2\omega)E^{c}(2\omega) ,
 \label{eq:carrier_population} \\
 \frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} &=
 \zeta^{abc}_{1}(2\omega)E^{b*}(2\omega)E^{c}(2\omega) 
 = \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{1}(2\omega;\kt)
-E^{b*}(2\omega)E^{c}(2\omega)
+E^{b*}(2\omega)E^{c}(2\omega) .
 \label{eq:spin_population}
 \end{align}
-where the second-rank tensor and the third-rank pseudotensor are given by
 
+\subsubsection{One-photon carrier and spin injection derivation}
 
-\subsubsection{Carrier and spin injection derivation}
+Dropping the two-photon contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
+\eqref{eq:Omegas-complete} we define $\Omega_{CV}{\kt} \equiv
+\Omega^{I}_{CV}(\kt)$. Then we can calculate the one-photon contribution to the
+carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
+\eqref{eq:1_electron_contribution} as follows:
+
 Working with the expressions of Eq. \eqref{eq:1_electron_contribution}
 we have: 
 \begin{align*}\label{eq:omegaICV_omegaI*VpV}
@@ -354,10 +354,10 @@ Working with the operators we have
 \end{align}
 
 
-Then, using the three equations above into Eq.
+Then, using the four equations above into Eq.
 \eqref{eq:1_electron_contribution} we can write
 \begin{align*}
-\frac{d\ev*{\n}^{e}_{1}}{dt} &= 
+\frac{d\ev*{\hat{n}}^{e}_{1}}{dt} &= 
 \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
 \frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
 E^{c}(2\omega)}{(2\omega)^{2}} \dw , \\
@@ -365,12 +365,38 @@ E^{c}(2\omega)}{(2\omega)^{2}} \dw , \\
 \frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
 E^{c}(2\omega)}{(2\omega)^{2}} \dw .
 \end{align*}
-and so, from Eq. \eqref{eq:carrier_population} we have that 
+\begin{align*}
+\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} &= 
+\frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
+\frac{S^{a}_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
+E^{c}(2\omega)}{(2\omega)^{2}} \dw , \\
+&= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
+\frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
+E^{c}(2\omega)}{(2\omega)^{2}} \dw .
+\end{align*}
+and so, from Eq. \eqref{eq:carrier_population} we have 
 \begin{equation}\label{eq:1_carrier_tensor}
 \xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
 \sum_{CV} \frac{v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw \nonumber
 \end{equation}
+\begin{equation}\label{eq:1_spin_tensor}
+\zeta^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
+\sum_{CC'V} \frac{S^{a}_{C'C}v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw \nonumber
+\end{equation}
 
+\subsubsection{Two-photon carrier and spin injection derivation}
+
+Now, dropping the one-photon contribution, $\Omega^{I}_{CV}(\kt)$, in Eq. 
+\eqref{eq:Omegas-complete} we define $\Omega_{CV}{\kt} \equiv
+\Omega^{II}_{CV}(\kt)$. Then we can calculate the two-photon contribution to the
+carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
+\eqref{eq:1_electron_contribution} as follows:
+
+Using the relation shown in Eq. \eqref{eq:dot_product} and working with the
+expressions of Eq. \eqref{eq:1_electron_contribution} we have:
+\begin{align*}\label{eq:omegaICV_omegaI*VpV}
+\Omega_{CV}{\kt} &= 
+\end{align*}
 
 
 % section coherent_control (end)
