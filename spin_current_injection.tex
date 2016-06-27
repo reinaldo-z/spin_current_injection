@@ -204,7 +204,7 @@ given by: that (equation 8 in paper):
 \frac{\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)}{2\omega}
 \end{equation}
 \begin{equation}\label{eq:Omega_II}
-\Omega^{II}_{CV}(\kt) = - \frac{e}{\hbar\omega}
+\Omega^{II}_{CV}(\kt) = -\left(\frac{e}{\hbar\omega}\right)^{2}
 \sum_{N} \frac{[\mathbf{v}_{CN}(\kt) \cdot \mathbf{E}(\omega)]
 [\mathbf{v}_{NV}(\kt)\cdot\mathbf{E}(\omega)]}{\omega_{CV}(\kt)+\omega_{VN}(kt)},
 \end{equation}
@@ -386,24 +386,42 @@ and so, from Eq. \eqref{eq:carrier_population} we have
 
 \subsubsection{Two-photon carrier and spin injection derivation}
 
-Now, dropping the one-photon contribution, $\Omega^{I}_{CV}(\kt)$, in Eq. 
-\eqref{eq:Omegas-complete} we define $\Omega_{CV}{\kt} \equiv
-\Omega^{II}_{CV}(\kt)$. Then we can calculate the two-photon contribution to the
+Now, keeping only the two-photon contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
+\eqref{eq:Omegas-complete} we can calculate the two-photon contribution for the
 carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
 \eqref{eq:1_electron_contribution} as follows:
 
-Using the relation shown in Eq. \eqref{eq:dot_product} and working with the
-expressions of Eq. \eqref{eq:1_electron_contribution} we have:
+Working with the expressions of Eq. \eqref{eq:1_electron_contribution} and using
+the relation of Eq. \eqref{eq:dot_product} we have:
 \begin{align*}\label{eq:omegaICV_omegaI*VpV}
-\Omega_{CV}{\kt} &= 
+\Omega^{*}_{C'V}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
+\sum_{M} \frac{[\mathbf{v}^{*}_{C'M}(\kt) \cdot \mathbf{E}^{*}(\omega)]
+[\mathbf{v}^{*}_{MV}(\kt)\cdot\mathbf{E}^{*}(\omega)]}{\omega_{C'V}(\kt)+\omega_{VM}(kt)}, \\
+&= - \left(\frac{e}{\hbar\omega}\right)^{2}
+\sum_{M} \frac{v^{b*}_{C'M}(\kt) E^{b*}(\omega)
+v^{c*}_{MV}(\kt) E^{c*}(\omega)}{\omega_{C'V}(\kt)+\omega_{VM}(kt)}, \\
+\Omega_{CV}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
+\sum_{N} \frac{[\mathbf{v}_{CN}(\kt) \cdot \mathbf{E}(\omega)]
+[\mathbf{v}_{NV}(\kt)\cdot\mathbf{E}(\omega)]}{\omega_{CV}(\kt)+\omega_{VN}(kt)},\\
+&= - \left(\frac{e}{\hbar\omega}\right)^{2}
+\sum_{N} \frac{v^{d}_{CN}(\kt) E^{d}(\omega)
+v^{f}_{NV}(\kt) E^{f}(\omega)}{\omega_{CV}(\kt)+\omega_{VN}(kt)},
 \end{align*}
+\begin{align}
+[\Omega_{CV}(\kt)\Omega^{*}_{C'V}(\kt)] = \left(\frac{e}{\hbar\omega}\right)^{4} &
+\sum_{MN} \frac{v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
+v^{d}_{C'N}(\kt) E^{d}(\omega)v^{f}_{NV}(\kt) E^{f}(\omega)}
+{[\omega_{C'V}(\kt)+\omega_{VM}(kt)][\omega_{CV}(\kt)+\omega_{VN}(kt)]} \nonumber \\
+& \times \dw
+\end{align}
 
+Now, working with the operators
 
 % section coherent_control (end)
 \end{document}
 
 
-
+v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
 
 
 
