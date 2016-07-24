@@ -5,7 +5,8 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{physics}
-
+\usepackage{showframe}
+\usepackage{color}
 \newcommand{\kt}{\mathbf{k}_{t}}
 \newcommand{\Op}{\hat{\mathcal{\theta}}}
 \newcommand{\n}{\hat{n}(\kt)}
@@ -237,7 +238,7 @@ that (equation 9 in paper)
 [\Omega^{II}_{CV}(\kt)
 \Omega^{II*}_{C'V}(\kt)]
 \delta \left( 2\omega - \omega_{CV}(\kt) \right) , 
-\label{eq:electron_2_contribution}\\
+\label{eq:2_electron_contribution}\\
 \frac{d\expval*{\Op}^{e}_{I}}{dt} &= 
 2\pi \sum_{C(C')V\kt}^n
 \mel*{C'\kt}{\Op}{C\kt}
@@ -259,21 +260,21 @@ In all the following expressions literal superscripts denote Cartesian
 components and if repeated are to be summed over.
 
 Areal carrier density operator: 
-\begin{align}\label{eq:areal_carrier_density}
+\begin{align}
 \hat{n} =& \frac{1}{\mathcal{A}} \sum_{\kt} \n , \nonumber \\ 
          &\n = \sum_{C} \hat{a}^{\dag}_{C\kt} 
-           \hat{a}^{\dag}_{C\kt} , \nonumber \\ 
+           \hat{a}_{C\kt} , \nonumber \\ 
 \hat{n} =& \frac{1}{\mathcal{A}} \sum_{C\kt} 
-  \hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt} . 
+  \hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} . \label{eq:areal_carrier_density}
 \end{align}
 
 Areal $a$ component of the spin density operator: 
-\begin{align}\label{eq:areal_spin_density}
+\begin{align}
 \hat{S}^{a} =& \frac{1}{\mathcal{A}} \sum_{\kt} \sa , \nonumber \\ 
              &\sa = \sum_{CC'} S^{a}_{CC'} 
-               \hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt} , \nonumber \\ 
-\hat{S}^{a}=& \frac{1}{\mathcal{A}} \sum_{C\kt} 
-  \hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt} . 
+               \hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} , \nonumber \\ 
+\hat{S}^{a}=& \frac{1}{\mathcal{A}} \sum_{CC'\kt} 
+  S^{a}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} . \label{eq:areal_spin_density}
 \end{align}
 
 Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
@@ -312,9 +313,27 @@ E^{b*}(2\omega)E^{c}(2\omega) .
 
 Dropping the two-photon contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
 \eqref{eq:Omegas-complete} we define $\Omega_{CV}{\kt} \equiv
-\Omega^{I}_{CV}(\kt)$. Then we can calculate the one-photon contribution to the
+\Omega^{I}_{CV}(\kt)$. Then we can calculate the one-photon contribution for the
 carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
 \eqref{eq:1_electron_contribution} as follows:
+
+Working with the operators we have 
+\begin{align}
+\mel*{C'\kt}{\hat{n}}{C\kt}
+&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
+&= \frac{1}{\mathcal{A}} \sum_{C\kt} \delta_{CC'} . \label{eq:op_n}
+\end{align}
+\begin{align}
+\mel*{C'\kt}{\hat{S}^{a}}{C\kt}
+&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+\mel*{C'\kt}{S^{a}_{C'C}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
+&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+S^{a}_{C'C}\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt}
+= \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{C'C}\delta_{CC'} \nonumber \\
+&= \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{CC'} . \label{eq:op_S}
+\end{align}
+
 
 Working with the expressions of Eq. \eqref{eq:1_electron_contribution}
 we have: 
@@ -324,77 +343,91 @@ we have:
 \Omega^{*}_{C'V}{\kt} &= \frac{-ie}{\hbar}
 \frac{\mathbf{v}^{*}_{C'V}(\kt) \cdot \mathbf{E}^{*}(2\omega)}{2\omega} .
 \end{align*}
-Now using the relation
 \begin{equation}\label{eq:dot_product}
 \mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)
 = \sum_{\ell} v^{\ell}_{CV}(\kt) E^{\ell}(2\omega) \equiv v^{\ell}_{CV}(\kt)
 E^{\ell}(2\omega) ,
 \end{equation}
 we can write 
-\begin{equation}\label{eq:omegaICV_omegaI*VpV_product}
-[\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] =
+\begin{equation}\label{eq:omegaI*CpV_omegaICV_product}
+[\Omega^{I*}_{C'V}(\kt) \Omega^{I}_{CV}(\kt)] =
 \left( \frac{e}{\hbar} \right)^{2} 
 \frac{v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}{(2\omega)^{2}} .
 \end{equation}
 
-Working with the operators we have 
-\begin{align}\label{eq:op_n}
-\mel*{C'\kt}{\hat{n}}{C\kt} ,
-&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
-\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}^{\dag}_{C\kt}}{C\kt} , \nonumber \\
-&= \frac{1}{\mathcal{A}} \delta_{CC'} .
-\end{align}
-\begin{align}\label{eq:op_S}
-\mel*{C'\kt}{\hat{S}^{a}}{C\kt} ,
-&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} \mel*{C'\kt}{\hat{S}^{a}(\kt)}{C\kt} \nonumber \\
-&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} S^{a}_{C'C} \mel*{C'\kt}{(\kt)\hat{a}^{\dag}_{C\kt} 
-\hat{a}^{\dag}_{C\kt}}{C\kt} , \nonumber \\
-&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} S^{a}_{C'C} \delta_{CC'} = 
-\frac{1}{\mathcal{A}} \sum_{CC'\kt} S^{a}_{CC'} .
-\end{align}
-
-
-
-
-Then, using the four equations above into Eq.
+Then, using the expressions from Eq. \eqref{eq:op_n} to
+\eqref{eq:omegaI*CpV_omegaICV_product} in Eq. 
 \eqref{eq:1_electron_contribution} we can write
-\begin{align*}
+\begin{align}
 \frac{d\ev*{\hat{n}}^{e}_{1}}{dt} &= 
 \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
 \frac{\delta_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}} \dw , \\
+E^{c}(2\omega)}{(2\omega)^{2}} \dw , \nonumber \\
 &= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
 \frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}} \dw .
-\end{align*}
-\begin{align*}
-\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} &= 
-\frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
-\frac{S^{a}_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}} \dw , \\
-&= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CV\kt}
-\frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}} \dw .
-\end{align*}
+E^{c}(2\omega)}{(2\omega)^{2}} \dw . \label{eq:n-final}
+\end{align}
+\begin{equation}\label{eq:S-final}
+\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} = 
+\frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CC'V\kt} 
+\frac{S^{a}_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}
+{(2\omega)^{2}}\dw
+\end{equation}
 and so, from Eq. \eqref{eq:carrier_population} we have 
+
 \begin{equation}\label{eq:1_carrier_tensor}
 \xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
-\sum_{CV} \frac{v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw \nonumber
+\sum_{CC'V} \frac{v^{b*}_{CV}(\kt)v^{c}_{C'V}(\kt)}{(2\omega)^{2}} \dw
 \end{equation}
+
 \begin{equation}\label{eq:1_spin_tensor}
 \zeta^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
-\sum_{CC'V} \frac{S^{a}_{C'C}v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw \nonumber
+\sum_{CC'V} \frac{S^{a}_{CC'}v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw
 \end{equation}
+
+{\color{blue} 
+El par de ecuaciones \eqref{eq:n-final} y \eqref{eq:1_carrier_tensor}
+est\'an escritas como aparece el el art\'iculo pero tengo duda si deber\'ian
+escribirse as\'i:
+\begin{align*}
+\frac{d\ev*{\hat{n}}^{e}_{1}}{dt} 
+&= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{{\color{red}CC'}V\kt}
+\frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega){\color{red}v^{c}_{C'V}}(\kt)
+E^{c}(2\omega)}{(2\omega)^{2}} \delta(2\omega-\omega_{{\color{red}C'}V}(\kt)) .
+\end{align*}
+\begin{equation*}
+\xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
+\sum_{{\color{red}CC'}V} \frac{v^{b*}_{CV}(\kt){\color{red}v^{c}_{C'V}}(\kt)}{(2\omega)^{2}} 
+\delta(2\omega-\omega_{{\color{red}C'}V}(\kt)) \nonumber
+\end{equation*}
+
+Sucede algo similar con las ecuaciones \eqref{eq:S-final} y
+\eqref{eq:1_spin_tensor}
+
+\begin{align*}
+\frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} &= 
+\frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CC'V\kt} 
+\frac{{\color{red}S^{a}_{CC'}}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}
+{(2\omega)^{2}}\dw
+\end{align*}
+\begin{equation*}
+\zeta^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
+\sum_{CC'V} \frac{{\color{red}S^{a}_{C'C}}v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} 
+\dw
+\end{equation*}
+
+Podr\'ias revisar?
+}
 
 \subsubsection{Two-photon carrier and spin injection derivation}
 
 Now, keeping only the two-photon contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
 \eqref{eq:Omegas-complete} we can calculate the two-photon contribution for the
 carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
-\eqref{eq:1_electron_contribution} as follows:
+\eqref{eq:2_electron_contribution} as follows:
 
-Working with the transition expressions of Eq.
-\eqref{eq:1_electron_contribution} 
+Working with the expressions of Eq.
+\eqref{eq:2_electron_contribution} we have 
 \begin{align*}\label{eq:omegaICV_omegaI*CpV}
 \Omega^{*}_{C'V}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
 \sum_{M} \frac{[\mathbf{v}^{*}_{C'M}(\kt) \cdot \mathbf{E}^{*}(\omega)]
@@ -416,8 +449,8 @@ v^{d}_{C'N}(\kt) E^{d}(\omega)v^{f}_{NV}(\kt) E^{f}(\omega)}
 {[\omega_{C'V}(\kt)+\omega_{VM}(kt)][\omega_{CV}(\kt)+\omega_{VN}(kt)]} \nonumber \\
 & \times \dw
 \end{align}
-and using the relations of Eq.\eqref{eq:dot_product}, Eq. \eqref{eq:op_n}, and
-Eq. \eqref{eq:op_S} we have we obtain 
+and using the relations from  Eqn. \eqref{eq:op_n} to Eq. \eqref{eq:dot_product}
+we have we obtain 
 \begin{align*}
 \frac{d\ev*{\hat{n}}^{e}_2}{dt}= \frac{1}{\mathcal{A}} \left(\frac{e}{\hbar\omega}\right)^{4} &
 \sum_{MN} \frac{\delta_{CC'} v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
@@ -428,16 +461,16 @@ v^{d}_{C'N}(\kt) E^{d}(\omega)v^{f}_{NV}(\kt) E^{f}(\omega)}
 \sum_{MN} \frac{v^{b*}_{CM}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
 v^{d}_{CN}(\kt) E^{d}(\omega)v^{f}_{NV}(\kt) E^{f}(\omega)}
 {[\omega_{C'V}(\kt)+\omega_{VM}(kt)][\omega_{CV}(\kt)+\omega_{VN}(kt)]} \nonumber \\
-& \times \dw
+& \times \dw \nonumber
 \end{align*}
 
 
 
-% section coherent_control (end)
+% % section coherent_control (end)
 \end{document}
 
 
-v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
+% v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
 
 
 
