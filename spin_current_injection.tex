@@ -195,7 +195,7 @@ The notation $C(C')$ indicates that the common subband index $c$ and the two
 spin indices, $s$ and $s'$ are to be summed over. 
 
 The term $\Omega_{CV}({\kt})$ in Eq. \eqref{eq:e-h_contribution_complete} is
-given by: that (equation 8 in paper):
+given by (equation 8 in paper):
 \begin{subequations}\label{eq:Omegas-complete}
 \begin{equation}\label{eq:Omega_I-II}
 \Omega_{CV}({\kt}) = \Omega^{I}_{CV}(\kt) + \Omega^{II}_{CV}(\kt),
@@ -335,7 +335,6 @@ S^{a}_{C'C}\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt}
 &= \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{CC'} . \label{eq:op_S}
 \end{align}
 
-
 Working with the expressions of Eq. \eqref{eq:1_electron_contribution}
 we have: 
 \begin{align*}\label{eq:omegaICV_omegaI*VpV}
@@ -444,7 +443,6 @@ E^{b*}(\omega)E^{c*}(\omega)E^{d}(\omega)E^{f}(\omega) .
 \end{split}
 \end{equation}
 
-
 Now, keeping only the two-photon contribution, $\Omega^{II}_{CV}(\kt)$, in Eq. 
 \eqref{eq:Omegas-complete} we can calculate the two-photon contribution for the
 carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
@@ -454,20 +452,19 @@ Working with the expressions of Eq.
 \eqref{eq:2_electron_contribution} and using the relation of Eq.
 \eqref{eq:dot_product} we have
 \begin{align*}\label{eq:omegaICV_omegaI*CpV}
-\Omega_{CV}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
+\Omega^{II}_{CV}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
 \sum_{CN} \frac{[\mathbf{v}_{CN}(\kt) \cdot \mathbf{E}(\omega)]
 [\mathbf{v}_{NV}(\kt)\cdot\mathbf{E}(\omega)]}{\omega_{CV}(\kt)+\omega_{VN}(kt)},\\
-\Omega^{*}_{C'V}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
+\Omega^{II*}_{C'V}(\kt) &= - \left(\frac{e}{\hbar\omega}\right)^{2}
 \sum_{C'M} \frac{[\mathbf{v}^{*}_{C'M}(\kt) \cdot \mathbf{E}^{*}(\omega)]
 [\mathbf{v}^{*}_{MV}(\kt)\cdot\mathbf{E}^{*}(\omega)]}{\omega_{C'V}(\kt)+\omega_{VM}(kt)}, \\
 \end{align*}
 \begin{equation}
 \begin{split}
-[\Omega_{CV}(\kt)\Omega^{*}_{C'V}(\kt)] = \left(\frac{e}{\hbar\omega}\right)^{4} &
+[\Omega^{II}_{CV}(\kt)\Omega^{II*}_{C'V}(\kt)] = \left(\frac{e}{\hbar\omega}\right)^{4} &
 \sum_{CC'MN} \frac{v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
 v^{d}_{C'N}(\kt) E^{d}(\omega)v^{f}_{NV}(\kt) E^{f}(\omega)}
-{[\omega_{C'V}(\kt)+\omega_{VM}(kt)][\omega_{CV}(\kt)+\omega_{VN}(kt)]} \\
-& \times \dw
+{[\omega_{C'V}(\kt)+\omega_{VM}(kt)][\omega_{CV}(\kt)+\omega_{VN}(kt)]}
 \end{split}
 \end{equation}
 and using the previous expression and the relations of Eqns. \eqref{eq:op_n} and
@@ -549,17 +546,101 @@ v^{d}_{CN}(\kt)v^{f}_{NV}(\kt)}
 v^{d}_{CN}(\kt)v^{f}_{NV}(\kt)}
 {[\omega_{C'V}(\kt)+\omega_{VM}(kt)][\omega_{CV}(\kt)+\omega_{VN}(kt)]} \times \dw.
 \end{equation}
+
+
+\subsubsection{One- and two-photon interference carrier and spin injection derivation}
+
+The one-  and two-photon interference contribution to the carrier and the spin
+population injection can be written as
+\begin{equation}\label{eq:int_carrier_population}
+\begin{split}
+\frac{d\ev*{\hat{n}}^{e}_{I}}{dt} &=
+\xi^{bc}_{I}(\omega;2\omega)E^{b*}(\omega)E^{c*}(\omega)E^{d}(2\omega) + c.c., \\
+&= \frac{1}{\mathcal{A}}\sum_{\kt}\xi^{bc}_{I}(2\omega;\kt) 
+E^{b*}(\omega)E^{c*}(\omega)E^{d}(2\omega) + c.c. ,
+\end{split}
+\end{equation}
+\begin{equation}\label{eq:int_spin_population}
+\begin{split}
+\frac{d\ev*{\hat{S}^{a}}^{e}_{I}}{dt} &=
+\zeta^{abc}_{I}(\omega;2\omega)E^{b*}(\omega)E^{c*}(\omega)E^{d}(2\omega) + c.c. ,\\
+&= \frac{1}{\mathcal{A}}\sum_{\kt}\zeta^{abc}_{I}(2\omega;\kt)
+E^{b*}(\omega)E^{c*}(\omega)E^{d}(2\omega) + c.c.
+\end{split}
+\end{equation}
+
+Finally, keeping both the one- and two-photon
+contribution, $\Omega^{II}_{CV}(\kt)$ and $\Omega^{II}_{CV}(\kt)$, in Eq.
+\eqref{eq:Omegas-complete} we can calculate the contribution due to the
+interference of one-photon at $2\omega$ and two-photons at $\omega$ frequencies
+for the carrier and spin population injection using Eqns.
+\eqref{eq:e_contribution} and \eqref{eq:electron_I_contribution} as follows:
+
+Working with the expression of Eq. \eqref{eq:electron_I_contribution} and using
+the relation of Eqns. \eqref{eq:Omegas-complete} and  \eqref{eq:dot_product} we
+have
+\begin{equation*}
+\Omega^{I}_{CV}{\kt} = \frac{ie}{\hbar}
+\frac{\mathbf{v}_{CV}(\kt) \cdot \mathbf{E}(2\omega)}{2\omega} ,
+\end{equation*}
+\begin{equation*}
+\Omega^{II*}_{C'V}(\kt) = - \left(\frac{e}{\hbar\omega}\right)^{2}
+\sum_{C'M} \frac{[\mathbf{v}^{*}_{C'M}(\kt) \cdot \mathbf{E}^{*}(\omega)]
+[\mathbf{v}^{*}_{MV}(\kt)\cdot\mathbf{E}^{*}(\omega)]}{\omega_{C'V}(\kt)+\omega_{VM}(kt)}
+\end{equation*}
+\begin{equation}
+[\Omega^{II*}_{C'V}(\kt) \Omega^{I}_{CV}{\kt}] =  -i \pi \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV} \frac{v^{b*}_{C'M}(\kt) E^{b*}(\omega)
+v^{c*}_{MV}(\kt) E^{c*}(\omega) v^{d}_{cv}(\kt) E^{d}(2\omega) }
+{\omega_{C'V}(\kt)+\omega_{VM}(kt)}
+\end{equation}
+and so, using the previous expression and the relations of Eqns. \eqref{eq:op_n} and
+\eqref{eq:op_S}, we have 
+\begin{equation}
+\begin{split}
+\frac{d\ev*{\hat{n}}^{e}_{I}}{dt} =&
+- \frac{i \pi}{\mathcal{A}} \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV\kt} \frac{\delta_{CC'}v^{b*}_{C'M}(\kt) E^{b*}(\omega)
+v^{c*}_{MV}(\kt) E^{c*}(\omega) v^{d}_{cv}(\kt) E^{d}(2\omega) }
+{\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw \\
+=& - \frac{i \pi}{\mathcal{A}} \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV\kt} \frac{v^{b*}_{CM}(\kt) E^{b*}(\omega)
+v^{c*}_{MV}(\kt) E^{c*}(\omega) v^{d}_{cv}(\kt) E^{d}(2\omega) }
+{\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\frac{d\ev*{\hat{n}}^{e}_{I}}{dt} &=
+- \frac{i \pi}{\mathcal{A}} \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV\kt} \frac{S^{a}_{CC'}v^{b*}_{C'M}(\kt) E^{b*}(\omega)
+v^{c*}_{MV}(\kt) E^{c*}(\omega) v^{d}_{cv}(\kt) E^{d}(2\omega) }
+{\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
+\end{split}
+\end{equation}
+
+Then, making a comparison with Eqns. \eqref{eq:int_carrier_population} and 
+\eqref{eq:int_spin_population} we can write 
+\begin{equation*}
+\xi^{bc}_{I}(\omega;2\omega) =  - i \pi \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV\kt} \frac{v^{b*}_{CM}(\kt)
+v^{c*}_{MV}(\kt) v^{d}_{cv}(\kt) }
+{\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
+\end{equation*}
+\begin{equation*}
+\zeta^{bc}_{I}(\omega;2\omega) = - i \pi \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV\kt} \frac{S^{a}_{CC'}v^{b*}_{C'M}(\kt)
+v^{c*}_{MV}(\kt) v^{d}_{cv}(\kt) }
+{\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
+\end{equation*}
+
+
+
+
 % % section coherent_control (end)
-
-
-
-
-
-
 \end{document}
 
-
-% v^{b*}_{C'M}(\kt) E^{b*}(\omega)v^{c*}_{MV}(\kt) E^{c*}(\omega)
+Revisar un factor de 2\pi en las ecuaciones.
 
 
 
