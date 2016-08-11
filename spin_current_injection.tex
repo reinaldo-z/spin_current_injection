@@ -5,7 +5,7 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{physics}
-\usepackage{showframe}
+% \usepackage{showframe}
 \usepackage{color}
 \newcommand{\kt}{\mathbf{k}_{t}}
 \newcommand{\Op}{\hat{\mathcal{\theta}}}
@@ -274,7 +274,7 @@ Areal $a$ component of the spin density operator:
              &\sa = \sum_{CC'} S^{a}_{CC'} 
                \hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} , \nonumber \\ 
 \hat{S}^{a}=& \frac{1}{\mathcal{A}} \sum_{CC'\kt} 
-  S^{a}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} . \label{eq:areal_spin_density}
+  S^{a}_{CC'}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} . \label{eq:areal_spin_density}
 \end{align}
 
 Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
@@ -370,38 +370,38 @@ E^{c}(2\omega)}{(2\omega)^{2}} \dw . \label{eq:2w_n-final}
 \begin{equation}\label{2w_eq:S-final}
 \frac{d\ev*{\hat{S}^{a}}^{e}_{1}}{dt} = 
 \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{CC'V\kt} 
-\frac{S^{a}_{CC'}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}
+\frac{S^{a}_{C'C}v^{b*}_{C'V}(\kt)E^{b*}(2\omega)v^{c}_{CV}(\kt)E^{c}(2\omega)}
 {(2\omega)^{2}}\dw
 \end{equation}
 and so, from Eq. \eqref{eq:2w-carrier_population} we have 
 
 \begin{equation}\label{eq:1_carrier_tensor}
 \xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
-\sum_{CC'V} \frac{v^{b*}_{CV}(\kt)v^{c}_{C'V}(\kt)}{(2\omega)^{2}} \dw
+\sum_{CV} \frac{v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw
 \end{equation}
 
 \begin{equation}\label{eq:1_spin_tensor}
 \zeta^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
-\sum_{CC'V} \frac{S^{a}_{CC'}v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw
+\sum_{CC'V} \frac{S^{a}_{C'C}v^{b*}_{CV}(\kt)v^{c}_{CV}(\kt)}{(2\omega)^{2}} \dw
 \end{equation}
 
 {\color{blue} 
-El par de ecuaciones \eqref{eq:2w_n-final} y \eqref{eq:1_carrier_tensor}
-est\'an escritas como aparece el el art\'iculo pero tengo duda si deber\'ian
-escribirse as\'i:
-\begin{align*}
-\frac{d\ev*{\hat{n}}^{e}_{1}}{dt} 
-&= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{{\color{red}CC'}V\kt}
-\frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega){\color{red}v^{c}_{C'V}}(\kt)
-E^{c}(2\omega)}{(2\omega)^{2}} \delta(2\omega-\omega_{{\color{red}C'}V}(\kt)) .
-\end{align*}
-\begin{equation*}
-\xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
-\sum_{{\color{red}CC'}V} \frac{v^{b*}_{CV}(\kt){\color{red}v^{c}_{C'V}}(\kt)}{(2\omega)^{2}} 
-\delta(2\omega-\omega_{{\color{red}C'}V}(\kt)) \nonumber
-\end{equation*}
+% El par de ecuaciones \eqref{eq:2w_n-final} y \eqref{eq:1_carrier_tensor}
+% est\'an escritas como aparece el el art\'iculo pero tengo duda si deber\'ian
+% escribirse as\'i:
+% \begin{align*}
+% \frac{d\ev*{\hat{n}}^{e}_{1}}{dt} 
+% &= \frac{2\pi e^{2}}{\mathcal{A}\hbar^{2}} \sum_{{\color{red}CC'}V\kt}
+% \frac{v^{b*}_{CV}(\kt)E^{b*}(2\omega){\color{red}v^{c}_{C'V}}(\kt)
+% E^{c}(2\omega)}{(2\omega)^{2}} \delta(2\omega-\omega_{{\color{red}C'}V}(\kt)) .
+% \end{align*}
+% \begin{equation*}
+% \xi^{bc}_{1}(2\omega;\kt) = \frac{2\pi e^{2}}{\hbar^{2}} 
+% \sum_{{\color{red}CC'}V} \frac{v^{b*}_{CV}(\kt){\color{red}v^{c}_{C'V}}(\kt)}{(2\omega)^{2}} 
+% \delta(2\omega-\omega_{{\color{red}C'}V}(\kt)) \nonumber
+% \end{equation*}
 
-De manera similar con las ecuaciones \eqref{2w_eq:S-final}
+El par de  ecuaciones \eqref{2w_eq:S-final}
 y\eqref{eq:1_spin_tensor} son las que aparecen en el art\'iculo, pero no s\'e si 
 deberian ser las siguientes:
 
