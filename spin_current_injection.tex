@@ -633,14 +633,143 @@ v^{c*}_{MV}(\kt) v^{d}_{cv}(\kt) }
 v^{c*}_{MV}(\kt) v^{d}_{cv}(\kt) }
 {\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
 \end{equation*}
-
-
-
-
 % % section coherent_control (end)
-\end{document}
 
-Revisar un factor de 2\pi en las ecuaciones.
+\subsection{Electrical and spin currents}
+{\small Section III-C in paper. \\}
+
+Areal electrical current density operator ($\hat{J}{a}$):
+\begin{equation}
+\begin{split}
+\hat{J}^{a} =& \frac{1}{\mathcal{A}} \sum_{\kt} \hat{J}^{a}(\kt) , \\
+& \hat{J}^{a}(\kt) = e \sum_{CC'} v^{a}_{CC'}(\kt) \hat{a}^{\dag}_{C'\kt}
+\hat{a}_{C\kt} , \\
+\hat{J}^{a} =& \frac{e}{\mathcal{A}} \sum_{CC'\kt} v^{a}_{CC'}(\kt) 
+\hat{a}^{\dag}_{C'\kt}\hat{a}_{C\kt} .
+\end{split}
+\end{equation}
+
+
+Areal spin current density operator ($\hat{K}^{ab}=\hat{v}^{a}\hat{S}^{b}$): 
+\begin{equation}
+\begin{split}
+\hat{K}^{ab} =& \frac{1}{\mathcal{A}} \sum_{\kt} K^{ab}(\kt) , \\
+& K^{ab}(\kt) = \sum_{CC'} K^{ab}_{CC'}(\kt)\hat{a}^{\dag}_{C'\kt} 
+\hat{a}_{C\kt} , \\
+\hat{K}^{ab} =& \frac{1}{\mathcal{A}} \sum_{CC'\kt} K^{ab}_{CC'}(\kt) 
+\hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt} .
+\end{split}
+\end{equation}
+
+Now, using Eq. \eqref{eq:FGR_1-2-I_contribution} we can write 
+\begin{equation*}
+\begin{split}
+\frac{d\ev*{\hat{J}^{a}}}{dt} =& \frac{d\ev*{\hat{J}^{a}}_{1}}{dt} + 
+\frac{d\ev*{\hat{J}^{a}}_{2}}{dt} + \frac{d\ev*{\hat{J}^{a}}_{I}}{dt}  \\
+\frac{d\ev*{\hat{K}^{ab}}}{dt} =& \frac{d\ev*{\hat{K}^{ab}}_{1}}{dt} + 
+\frac{d\ev*{\hat{K}^{ab}}_{2}}{dt} + \frac{d\ev*{\hat{K}^{ab}}_{I}}{dt}  
+\end{split}
+\end{equation*}
+
+\subsubsection{One-photon electrical and spin current}
+
+The one-photon ($2\omega$) terms are given by
+\begin{align}
+\frac{d\ev*{\hat{J}^{a}}_{1}}{dt} =& \eta^{acd}_{1}(2\omega) E^{c*}(2\omega)
+E^{d}(2\omega), \nonumber \\ 
+& \eta^{acd}_{1}(2\omega) = \frac{1}{\mathcal{A}} \sum_{\kt} \eta^{acd}_{1}
+(2\omega;\kt), \nonumber \\
+\frac{d\ev*{\hat{J}^{a}}_{1}}{dt} =& \frac{1}{\mathcal{A}} \sum_{\kt} 
+\eta^{acd}_{1} (2\omega;\kt) E^{c*}(2\omega) E^{d}(2\omega) \label{eq:J_1-2w}
+\end{align}
+\begin{align}
+\frac{d\ev*{\hat{K}^{ab}}_{1}}{dt} =& \mu^{abcd}_{1}(2\omega)
+E^{c*}(2\omega) E^{d}(2\omega), \nonumber \\ 
+& \mu^{abcd}_{1}(2\omega) = \frac{1}{\mathcal{A}} \sum_{\kt} \mu^{abcd}_{1}
+(2\omega;\kt) , \nonumber \\
+\frac{d\ev*{\hat{K}^{ab}}_{1}}{dt} =& \frac{1}{\mathcal{A}} \sum_{\kt} 
+\mu^{abcd}_{1}(2\omega;\kt) E^{c*}(2\omega) E^{d}(2\omega), \label{eq:mu_1-2w}
+\end{align}
+
+We have that the electrical current density is given by
+\begin{equation*}
+\begin{split}
+\frac{d \ev*{\hat{J}^{a}}_1}{dt} =& 2\pi \sum_{CC'V\kt} \mel*{C'\kt}
+{\hat{J}^{a}(\kt)}{C\kt} [\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] 
+\delta({2\omega - \omega_{CV}}) , \\
+\end{split}
+\end{equation*}
+where
+\begin{equation*}
+\begin{split}
+\mel*{C'\kt}{\hat{J}^{a}(\kt)}{C\kt} &= 
+\sum_{CC'\kt} \mel*{C'\kt}
+{\frac{e}{\mathcal{A}} v^{a}_{CC'}(\kt) \hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt}}
+{C\kt} \\
+&= \frac{e}{\mathcal{A}} \sum_{CC'\kt} v^{a}_{CC'}(\kt) \mel*{C'\kt} 
+{\hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt}}
+{C\kt} \\
+&= \frac{e}{\mathcal{A}} \sum_{CC'\kt}
+v^{a}_{CC'}(\kt) \delta_{C'C} = \frac{e}{\mathcal{A}} \sum_{CC'\kt}
+v^{a}_{{\color{red}{C'C}}}(\kt) .
+\end{split}
+\end{equation*}
+Then, using Eq. \eqref{eq:omegaI*CpV_omegaICV_product} we can write
+\begin{equation}
+\begin{split}
+\frac{d\ev*{\hat{J}^{a}}_{1}}{dt} =& \frac{2 \pi e^{3}}{\mathcal{A} \hbar^{2}}
+\sum_{CC'V\kt} \frac{v^{a}{C'C}(\kt) v^{c*}_{CV}(\kt) E^{c*}(2\omega) 
+v^{d}_{C'V}(\kt) E^{d}(2\omega)}{(2\omega)^{2}} \delta(2\omega - 
+\omega_{CV}(\kt))
+\end{split}
+\end{equation}
+and making a comparison with Eq. \eqref{eq:J_1-2w} we have that the electrical 
+current density tensor is given by
+\begin{equation}
+\eta^{acd}_1(2\omega;\kt) = \frac{2 \pi e^{3}}{\hbar^{2}} \sum_{CC'V}
+\frac{v^{a}_{C'C}(\kt) v^{c*}_{CV}(\kt) v^{d}_{C'V}(\kt) }{(2\omega)^{2}}
+\delta(2\omega - \omega_{CV}(\kt))
+\end{equation}
+
+
+The spin current density is given by
+\begin{equation}
+\frac{d\ev*{\hat{K}^{ab}}_{1}}{dt} = 2 \pi \sum_{CC'V\kt} \mel{C'\kt}
+{\hat{K}^{ab}(\kt)}{C\kt} [\Omega^{I}_{CV}(\kt) \Omega^{I*}_{C'V}(\kt)] \delta 
+(2\omega - \omega_{CV}(\kt))
+\end{equation}
+where
+\begin{equation*}
+\begin{split}
+\mel{C'\kt}{\hat{K}^{ab}(\kt)}{C\kt} &= \sum_{CC'\kt} \mel{C'\kt}
+{\frac{1}{\mathcal{A}} K^{ab}_{CC'}(\kt) 
+\hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt})}{C\kt}  \\
+&= \frac{1}{\mathcal{A}} \sum_{CC'\kt} K^{ab}_{CC'}(\kt) \mel{C'\kt}
+{\hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt})}{C\kt}  \\
+&= \frac{1}{\mathcal{A}} \sum_{CC'\kt}
+K^{ab}_{CC'}(\kt) \delta_{CC'} = \frac{1}{\mathcal{A}} \sum_{CC'\kt}
+K^{ab}_{\color{red}{C'C}}(\kt) .
+\end{split}
+\end{equation*}
+Again, using the Eq. \eqref{eq:omegaI*CpV_omegaICV_product} we can write
+\begin{equation}
+\frac{d\ev*{\hat{K}^{ab}}_{1}}{dt} = \frac{2 \pi e^{2}}{\mathcal{A} \hbar^{2}}
+\sum_{CC'V\kt} \frac{K^{ab}(\kt) v^{c*}_{CV}(\kt) E^{c*}(2\omega) 
+v^{d}_{CV}(\kt) E^{d}(2\omega) }{(2\omega)^{2}} \delta ({2\omega - 
+\omega_{CV}(\kt)})
+\end{equation}
+and making a comparison with Eq. \eqref{eq:mu_1-2w} we have that the spin 
+current density tensor is given by
+\begin{equation}
+\mu^{abcd}_{1} (2\omega;\kt) = \frac{2 \pi e^{2}}{\hbar^{2}}
+\sum_{CC'V\kt} \frac{K^{ab}(\kt) v^{c*}_{CV}(\kt) v^{d}_{CV}(\kt)}
+{(2\omega)^{2}} \delta ({2\omega - \omega_{CV}(\kt)})
+\end{equation}
+
+
+
+
+\end{document}
 
 
 
