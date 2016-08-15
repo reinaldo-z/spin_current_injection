@@ -529,22 +529,20 @@ v^{d}_{CN}(\kt) E^{d}(\omega)v^{f}_{NV}(\kt) E^{f}(\omega)}
 }
 
 and so, from Eqns. \eqref{eq:1w_carrier_population} and
-\eqref{eq:1w_spin_population} we have 
-\begin{equation}\label{eq:2_carrier_tensor}
-\frac{d\ev*{\hat{n}}^{e}_2}{dt}
-= \left(\frac{e}{\hbar\omega}\right)^{4}
+begin\eqref{eq:1w_spin_population} we have 
+\begin{equation}
+\xi^{bcdf}_{2}(\omega;\kt) = \left(\frac{e}{\hbar\omega}\right)^{4}
 \sum_{CVMN} \frac{v^{b*}_{CM}(\kt)v^{c*}_{MV}(\kt)
 v^{d}_{CN}(\kt)v^{f}_{NV}(\kt)}
 {[\omega_{C'V}(\kt)/2+\omega_{VM}(kt)][\omega_{CV}(\kt)/2+\omega_{VN}(kt)]} 
 \dw,
 \end{equation}
 \begin{equation}\label{eq:2_spin_tensor}
-\frac{d\ev*{\hat{S}^{a}}^{e}_2}{dt}= \frac{1}{\mathcal{A}} \left(\frac{e}{\hbar\omega}\right)^{4} 
+\zeta^{abcdf}_{2}(\omega;\kt) = \frac{1}{\mathcal{A}} \left(\frac{e}{\hbar\omega}\right)^{4} 
 \sum_{CC'VMN} \frac{S^{a}_{CC'} v^{b*}_{C'M}(\kt)v^{c*}_{MV}(\kt)
 v^{d}_{CN}(\kt)v^{f}_{NV}(\kt)}
 {[\omega_{C'V}(\kt)/2+\omega_{VM}(kt)][\omega_{CV}(\kt)/2+\omega_{VN}(kt)]} \times \dw.
 \end{equation}
-
 
 \subsubsection{One- and two-photon interference carrier and spin injection derivation}
 
@@ -586,7 +584,7 @@ have
 \sum_{C'M} \frac{[\mathbf{v}^{*}_{C'M}(\kt) \cdot \mathbf{E}^{*}(\omega)]
 [\mathbf{v}^{*}_{MV}(\kt)\cdot\mathbf{E}^{*}(\omega)]}{\omega_{C'V}(\kt)+\omega_{VM}(kt)}
 \end{equation*}
-\begin{equation}
+\begin{equation}\label{eq:omegaII*CpV_omegaICV_product}
 [\Omega^{II*}_{C'V}(\kt) \Omega^{I}_{CV}{\kt}] =  -i \pi \left( \frac{e}{\hbar\omega} 
 \right)^{3} \sum_{CC'MV} \frac{v^{b*}_{C'M}(\kt) E^{b*}(\omega)
 v^{c*}_{MV}(\kt) E^{c*}(\omega) v^{d}_{cv}(\kt) E^{d}(2\omega) }
@@ -620,14 +618,14 @@ v^{c*}_{MV}(\kt) E^{c*}(\omega) v^{d}_{cv}(\kt) E^{d}(2\omega) }
 Then, making a comparison with Eqns. \eqref{eq:int_carrier_population} and 
 \eqref{eq:int_spin_population} we can write 
 \begin{equation*}
-\xi^{bc}_{I}(\omega;2\omega) =  - i \pi \left( \frac{e}{\hbar\omega} 
-\right)^{3} \sum_{CC'MV\kt} \frac{v^{b*}_{CM}(\kt)
+\xi^{bc}_{I}(2\omega,\omega;\kt) =  - i \pi \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV} \frac{v^{b*}_{CM}(\kt)
 v^{c*}_{MV}(\kt) v^{d}_{cv}(\kt) }
 {\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
 \end{equation*}
 \begin{equation*}
-\zeta^{bc}_{I}(\omega;2\omega) = - i \pi \left( \frac{e}{\hbar\omega} 
-\right)^{3} \sum_{CC'MV\kt} \frac{S^{a}_{CC'}v^{b*}_{C'M}(\kt)
+\zeta^{bc}_{I}(2\omega,\omega;\kt) = - i \pi \left( \frac{e}{\hbar\omega} 
+\right)^{3} \sum_{CC'MV} \frac{S^{a}_{CC'}v^{b*}_{C'M}(\kt)
 v^{c*}_{MV}(\kt) v^{d}_{cv}(\kt) }
 {\omega_{C'V}(\kt)+\omega_{VM}(kt)} \dw
 \end{equation*}
@@ -669,9 +667,9 @@ Now, using Eq. \eqref{eq:FGR_1-2-I_contribution} we can write
 \end{split}
 \end{equation*}
 
-\subsubsection{One-photon electrical and spin current}
+\subsubsection{One-photon electrical- and spin-current}
 
-The one-photon terms are given by
+The one-photon electrical and spin current terms are given by
 \begin{align}
 \frac{d\ev*{\hat{J}^{a}}_{1}}{dt} =& \eta^{acd}_{1}(2\omega) E^{c*}(2\omega)
 E^{d}(2\omega), \nonumber \\ 
@@ -737,7 +735,7 @@ The one-photon $2\omega$ spin current density is given by
 (2\omega - \omega_{CV}(\kt))
 \end{equation}
 where
-\begin{equation*}
+\begin{equation}\label{eq:K-matelem}
 \begin{split}
 \mel{C'\kt}{\hat{K}^{ab}(\kt)}{C\kt} &= \sum_{CC'\kt} \mel{C'\kt}
 {\frac{1}{\mathcal{A}} K^{ab}_{CC'}(\kt) 
@@ -748,25 +746,33 @@ where
 K^{ab}_{CC'}(\kt) \delta_{CC'} = \frac{1}{\mathcal{A}} \sum_{CC'\kt}
 K^{ab}_{\color{red}{C'C}}(\kt) .
 \end{split}
-\end{equation*}
-Again, using the Eq. \eqref{eq:omegaI*CpV_omegaICV_product} we can write
+\end{equation}
+Using the Eq. \eqref{eq:omegaI*CpV_omegaICV_product} with a minimal
+modification in the superscripts we can write
+\begin{equation}\label{eq:omegaI*CpV_omegaICV_product-2}
+[\Omega^{I*}_{C'V}(\kt) \Omega^{I}_{CV}(\kt)] =
+\left( \frac{e}{\hbar} \right)^{2} 
+\frac{v^{c*}_{C'V}(\kt)E^{c*}(2\omega)v^{d}_{CV}(\kt)E^{d}(2\omega)}
+{(2\omega)^{2}} .
+\end{equation}
+and then
 \begin{equation}
 \frac{d\ev*{\hat{K}^{ab}}_{1}}{dt} = \frac{2 \pi e^{2}}{\mathcal{A} \hbar^{2}}
 \sum_{CC'V\kt} \frac{K^{ab}(\kt) v^{c*}_{CV}(\kt) E^{c*}(2\omega) 
 v^{d}_{CV}(\kt) E^{d}(2\omega) }{(2\omega)^{2}} \delta ({2\omega - 
-\omega_{CV}(\kt)})
+\omega_{CV}(\kt)}) .
 \end{equation}
-and making a comparison with Eq. \eqref{eq:mu_1-2w} we have that the spin 
+Making a comparison with Eq. \eqref{eq:mu_1-2w} we have that the spin 
 current density tensor is given by
 \begin{equation}
 \mu^{abcd}_{1} (2\omega;\kt) = \frac{2 \pi e^{2}}{\hbar^{2}}
-\sum_{CC'V\kt} \frac{K^{ab}(\kt) v^{c*}_{CV}(\kt) v^{d}_{CV}(\kt)}
+\sum_{CC'V} \frac{K^{ab}(\kt) v^{c*}_{CV}(\kt) v^{d}_{CV}(\kt)}
 {(2\omega)^{2}} \delta ({2\omega - \omega_{CV}(\kt)})
 \end{equation}
 
-\subsubsection{Two-photon electrical and spin current}
+\subsubsection{Two-photon electrical- and spin-current}
 
-The two-photon $\omega$ terms are given by
+The two-photon $\omega$  electrical- and spin-current terms are given by
 \begin{align}
 \frac{d\ev*{\hat{J}^{a}}_{2}}{dt} =& \eta^{acd}_{2}(\omega) E^{c*}(\omega)
 E^{d*}(\omega) E^{f}(\omega) E^{g}(\omega), \nonumber \\ 
@@ -774,7 +780,7 @@ E^{d*}(\omega) E^{f}(\omega) E^{g}(\omega), \nonumber \\
 (\omega;\kt), \nonumber \\
 \frac{d\ev*{\hat{J}^{a}}_{2}}{dt} =& \frac{1}{\mathcal{A}} \sum_{\kt} 
 \eta^{acd}_{2} (\omega;\kt) E^{c*}(\omega) E^{d*}(\omega) E^{f}(\omega) 
-E^{g}(\omega) \label{eq:J_2-1w}
+E^{g}(\omega)\label{eq:J_2-1w}
 \end{align}
 \begin{align}
 \frac{d\ev*{\hat{K}^{ab}}_{2}}{dt} =& \mu^{abcd}_{2}(\omega)
@@ -790,7 +796,7 @@ Making the development fort the two-photon $\omega$ electrical current density
 we have
 \begin{equation*}
 \begin{split}
-\frac{d \ev*{\hat{J}^{a}}_{1}}{dt} =& 2\pi \sum_{CC'V\kt} \mel*{C'\kt}
+\frac{d \ev*{\hat{J}^{a}}_{2}}{dt} =& 2\pi \sum_{CC'V\kt} \mel*{C'\kt}
 {\hat{J}^{a}(\kt)}{C\kt} [\Omega^{II}_{CV}(\kt) \Omega^{II*}_{C'V}(\kt)] 
 \delta(2\omega - \omega_{CV}(\kt)) . \\
 \end{split}
@@ -818,14 +824,15 @@ v^{f}_{CN}(\kt) E^{f}(\omega) v^{g}_{NV}(\kt) E^{g}(\omega) }
 & \times \delta(2\omega - \omega_{CV}(\kt))
 \end{split}
 \end{equation}
-and making a comparison with Eq. \eqref{eq:J_2-1w} we have that the two-photon
-$2\omega$ electrical current density tensor is given by
+and making a comparison with Eq. \eqref{eq:J_2-1w} we have that the two-photon,
+$\omega$, electrical current density tensor is given by
 \begin{equation}
 \begin{split}
-\eta^{acdfg}_{2} = \frac{2 \pi e^{5}}{(\hbar \omega)^{4}} \sum_{CC'VMN\kt} 
-& \frac{v^{a}_{\color{red}{CC'}}(\kt) v^{c*}_{C'M}(\kt) v^{d*}_{MV}(\kt) v^{f}_
-{CV}(\kt) v^{g}_{NV}(\kt)} {[\omega_{C'V}(\kt)/2 + \omega_{VM}] 
-[\omega_{CV}(\kt)/2 + \omega_{VN}]} \times \delta(2\omega - \omega_{CV}(\kt))
+\eta^{acdfg}_{2}(\omega;\kt) = \frac{2 \pi e^{5}}{(\hbar \omega)^{4}} 
+\sum_{CC'VMN} & \frac{v^{a}_{\color{red}{CC'}}(\kt) v^{c*}_{C'M}(\kt) 
+v^{d*}_{MV}(\kt) v^{f}_{CV}(\kt) v^{g}_{NV}(\kt)} {[\omega_{C'V}(\kt)/2 + 
+\omega_{VM}] [\omega_{CV}(\kt)/2 + \omega_{VN}]} \delta(2\omega - 
+\omega_{CV}(\kt))
 \end{split}
 \end{equation}
 
@@ -838,7 +845,7 @@ we have
 \delta(2\omega - \omega_{CV}(\kt)) . \\
 \end{split}
 \end{equation*}
-Then, using the relation of Eqns. \eqref{eq:omegaII*CpV_omegaIICV_product-2}
+Using the relation of Eqns. \eqref{eq:omegaII*CpV_omegaIICV_product-2}
 and \eqref{eq:J-matelem} we can write
 \begin{equation}
 \begin{split}
@@ -854,12 +861,98 @@ and making a comparison with Eq. \eqref{eq:K_2-1w} we have that the tone-photon
 $\omega$ spin current density tensor is given by
 \begin{equation}
 \begin{split}
-\mu^{abcdfg}_{2}(\omega;\kt) = \frac{2 \pi e^{4}}{(\hbar \omega)^{4}} 
-\sum_{CC'VMN\kt} & \frac{K^{ab}_{\color{red}{C'C}}(\kt) 
+  \mu^{abcdfg}_{2}(\omega;\kt) = \frac{2 \pi e^{4}}{(\hbar \omega)^{4}} 
+\sum_{CC'VMN} & \frac{K^{ab}_{\color{red}{C'C}}(\kt) 
 v^{c*}_{C'M}(\kt) v^{d*}_{MV}(\kt) v^{f}_{CN}(\kt) v^{g}_{NV}(\kt) }
 {[\omega_{C'V}(\kt)/2 + \omega_{VM}] [\omega_{CV}(\kt)/2 + \omega_{VN}]} 
 \delta(2\omega - \omega_{CV}(\kt))
 \end{split}
+\end{equation}
+
+\subsubsection{One- and two-photon interference electrical and spin currents}
+
+The one-photon ($2\omega$) and two-photon ($\omega$)  electrical- and spin-
+current terms can be written as
+\begin{align}
+\frac{d\ev*{\hat{J}^{a}}_{I}}{dt} = & \eta^{acdf}_{I}(2\omega,\omega) 
+E^{c*}(\omega) E^{d*}(\omega) E^{f}(2\omega) + c.c. \nonumber \\
+& \eta^{acdf}_{I}(2\omega,\omega) = \frac{1}{\mathcal{A}} \sum_{\kt} 
+\eta^{acdf}_{I}(2\omega,\omega;\kt) , \nonumber \\
+\frac{d\ev*{\hat{J}^{a}}_{I}}{dt} = & \frac{1}{\mathcal{A}} \sum_{\kt} 
+\eta^{acdf}_{I}(2\omega,\omega;\kt) E^{c*}(\omega)
+E^{d*}(\omega) E^{f}(2\omega) + c.c. \label{eq:J_12-I}
+\end{align}
+\begin{align}
+\frac{d\ev*{\hat{K}^{ab}}_{I}}{dt} = & \eta^{acdf}_{I}(2\omega,\omega) 
+E^{c*}(\omega) E^{d*}(\omega) E^{f}(2\omega) + c.c. \nonumber \\
+& \eta^{acdf}_{I}(2\omega,\omega) = \frac{1}{\mathcal{A}} \sum_{\kt} 
+\eta^{acdf}_{I}(2\omega,\omega;\kt) , \nonumber \\
+\frac{d\ev*{\hat{K}^{ab}}_{I}}{dt} = & \frac{1}{\mathcal{A}} \sum_{\kt} 
+\eta^{acdf}_{I}(2\omega,\omega;\kt) E^{c*}(\omega)
+E^{d*}(\omega) E^{f}(2\omega) + c.c. \label{eq:K_12-I}
+\end{align}
+
+Making the development for the one-photon, $2\omega$, and two-photon, $\omega$,
+interference, for the electrical current density we have 
+\begin{equation*}
+\frac{d\ev*{\hat{J}^{a}}_{I}}{dt} = 2 \pi \sum_{CC'V\kt} \mel{C'\kt}
+{\hat{J}^{a}(\kt)}{C\kt} [\Omega^{I}_{CV} \Omega^{II*}_{C'V} + c.c.]
+\delta(2\omega - \omega_{CV}(\kt))
+\end{equation*}
+Then, using the relation of Eq. \eqref{eq:omegaII*CpV_omegaICV_product} with a
+minimal modification in the superscripts we have
+\begin{equation}\label{eq:omegaII*CpV_omegaICV_product-2}
+[\Omega^{II*}_{C'V}(\kt) \Omega^{I}_{CV}{\kt}] =  -i \pi \left( \frac{e}
+{\hbar\omega} \right)^{3} \sum_{CC'MV} \frac{v^{c*}_{C'M}(\kt) E^{c*}(\omega)
+v^{d*}_{MV}(\kt) E^{d*}(\omega) v^{f}_{cv}(\kt) E^{f}(2\omega) }
+{\omega_{C'V}(\kt)+\omega_{VN}(\kt)}
+\end{equation}
+and using Eq. \eqref{eq:J-matelem} we can write
+\begin{equation*}
+\begin{split}
+\frac{d\ev*{\hat{J}^{a}}_{I}}{dt} = - \frac{i \pi e^{3}}{\mathcal{A}(\hbar 
+\omega)^{3}}\sum_{CC'VN\kt} & \frac{v^{a}_{C'C}(\kt) v^{c*}_{C'N}(\kt) 
+E^{c*}(\omega) v^{d*}_{NV}(\kt) E^{d*}(\omega) v^{f}_{CV}(\kt) E^{f}(2\omega) }
+{\omega_{C'V}(\kt)/2 + \omega_{VN}(\kt)} \\
+& \times \delta(2\omega - \omega_{CV}(\kt)) .
+\end{split}
+\end{equation*}
+Making a comparison with Eq. \eqref{eq:J_12-I} we have that the current
+injection tensor for the quantum mechanical interference between the one- and
+two-photon absorption can be written as
+\begin{equation}
+\eta^{acdf}_{I}(2\omega,\omega;\kt) = - \frac{i \pi e^{3}}{(\hbar \omega)^{3}}
+\sum_{CC'VN} \frac{v^{a}_{C'C}(\kt) v^{c*}_{C'N}(\kt) v^{d*}_{NV}(\kt) 
+v^{f}_{CV}(\kt)}{\omega_{C'V}(\kt)/2 + \omega_{VN}(\kt)} \delta(2\omega - 
+\omega_{CV}(\kt)) .
+\end{equation}
+
+Finally, making the development for the one-photon, $2\omega$, and two-photon,
+$\omega$, interference for the spin current density we have
+\begin{equation*}
+\frac{d\ev*{\hat{K}^{ab}}_{I}}{dt} = 2 \pi \sum_{CC'V\kt} \mel{C'\kt}
+{\hat{K}^{ab}(\kt)}{C\kt} [\Omega^{I}_{CV} \Omega^{II*}_{C'V} + c.c.]
+\delta(2\omega - \omega_{CV}(\kt))
+\end{equation*}
+Then, using the relation of Eqns. \eqref{eq:omegaII*CpV_omegaICV_product-2}
+and \eqref{eq:J-matelem} we can write
+\begin{equation*}
+\begin{split}
+\frac{d\ev*{\hat{K}^{ab}}_{I}}{dt} = - \frac{i \pi e^{3}}{\mathcal{A}(\hbar 
+\omega)^{3}}\sum_{CC'VN\kt} & \frac{K^{ab}_{C'C}(\kt) v^{c*}_{C'N}(\kt) 
+E^{c*}(\omega) v^{d*}_{NV}(\kt) E^{d*}(\omega) v^{f}_{CV}(\kt) E^{f}(2\omega) }
+{\omega_{C'V}(\kt)/2 + \omega_{VN}(\kt)} \\
+& \times \delta(2\omega - \omega_{CV}(\kt)) .
+\end{split}
+\end{equation*}
+Making a comparison with Eq. \eqref{eq:J_12-I} we have that the current
+injection tensor for the quantum mechanical interference between the one- and
+two-photon absorption can be written as
+\begin{equation}
+\mu^{abcdf}_{I}(2\omega,\omega;\kt) = - \frac{i \pi e^{3}}{(\hbar 
+\omega)^{3}}\sum_{CC'VN} \frac{K^{ab}_{C'C}(\kt) v^{c*}_{C'N}(\kt) 
+v^{d*}_{NV}(\kt) v^{f}_{CV}(\kt) }{\omega_{C'V}(\kt)/2 + \omega_{VN}(\kt)} 
+\delta(2\omega - \omega_{CV}(\kt)) .
 \end{equation}
 
 
@@ -867,7 +960,8 @@ v^{c*}_{C'M}(\kt) v^{d*}_{MV}(\kt) v^{f}_{CN}(\kt) v^{g}_{NV}(\kt) }
 \end{document}
 
 
-
+quitar la sumatoria sobre \kt en los tensores finales y revisar de que son
+función
 
 
 
