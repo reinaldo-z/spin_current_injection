@@ -5,7 +5,7 @@
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{physics}
-\usepackage{showframe}
+% \usepackage{showframe}
 \usepackage{color}
 \newcommand{\kt}{\mathbf{k}_{t}}
 \newcommand{\Op}{\hat{\mathcal{\theta}}}
@@ -271,10 +271,10 @@ Areal carrier density operator:
 Areal $a$ component of the spin density operator: 
 \begin{align}
 \hat{S}^{a} =& \frac{1}{\mathcal{A}} \sum_{\kt} \sa , \nonumber \\ 
-             &\sa = \sum_{CC'} S^{a}_{CC'} 
-               \hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} , \nonumber \\ 
+             &\sa = \sum_{CC'} S^{a}_{C'C} 
+               \hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt} , \nonumber \\ 
 \hat{S}^{a}=& \frac{1}{\mathcal{A}} \sum_{CC'\kt} 
-  S^{a}_{CC'}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt} . \label{eq:areal_spin_density}
+  S^{a}_{C'C}\hat{a}^{\dag}_{C'\kt} \hat{a}_{C\kt} . \label{eq:areal_spin_density}
 \end{align}
 
 Substituting $\hat{n}$ and $\hat{S}^{a}$ in Eq.
@@ -319,20 +319,31 @@ carrier and spin population injection using Eqns. \eqref{eq:e_contribution} and
 \eqref{eq:1_electron_contribution} as follows:
 
 Working with the operators we have 
+% \begin{align}
+% \mel*{C'\kt}{\hat{n}}{C\kt}
+% &= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+% \mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
+% &= \frac{1}{\mathcal{A}} \sum_{C\kt} \delta_{CC'} . \label{eq:op_n}
+% \end{align}
 \begin{align}
 \mel*{C'\kt}{\hat{n}}{C\kt}
-&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
-\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
-&= \frac{1}{\mathcal{A}} \sum_{C\kt} \delta_{CC'} . \label{eq:op_n}
+= \mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} = \delta_{CC'} . \label{eq:op_n}
 \end{align}
+% \begin{align}
+% \mel*{C'\kt}{\hat{S}^{a}}{C\kt}
+% &= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+% \mel*{C'\kt}{S^{a}_{C'C}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
+% &= \frac{1}{\mathcal{A}} \sum_{C\kt} 
+% S^{a}_{C'C}\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt}
+% = \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{C'C}\delta_{CC'} \nonumber \\
+% &= \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{CC'} . \label{eq:op_S}
+% \end{align}
 \begin{align}
 \mel*{C'\kt}{\hat{S}^{a}}{C\kt}
-&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
-\mel*{C'\kt}{S^{a}_{C'C}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
-&= \frac{1}{\mathcal{A}} \sum_{C\kt} 
-S^{a}_{C'C}\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt}
-= \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{C'C}\delta_{CC'} \nonumber \\
-&= \frac{1}{\mathcal{A}} \sum_{C\kt} S^{a}_{CC'} . \label{eq:op_S}
+&= \mel*{C'\kt}{S^{a}_{C'C}\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt} , \nonumber \\
+&= S^{a}_{C'C}\mel*{C'\kt}{\hat{a}^{\dag}_{C\kt} \hat{a}_{C\kt}}{C\kt}
+= S^{a}_{C'C}\delta_{CC'} \nonumber \\
+&= S^{a}_{CC'} . \label{eq:op_S}
 \end{align}
 
 Working with the expressions of Eq. \eqref{eq:1_electron_contribution}
